@@ -4,28 +4,12 @@
 input[type=text] {
   border: 1px solid black;
   border-radius: 4px;
+  font-family: 'Raleway', sans-serif;
   min-height: 36px;
-  padding: 4px 10px;
+  padding: 7px 10px;
   box-shadow: inset 2px 2px 5px -1px rgba(0, 0, 0, 0.6); }
   input[type=text]:focus {
     border: 1px solid black; }
-
-.green-btn {
-  background-color: #00C957;
-  border-radius: 4px;
-  border: none;
-  min-height: 36px;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 8px 20px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  transition: background .5s ease-in-out;
-  font-family: 'Raleway', sans-serif; }
-  .green-btn:hover {
-    cursor: pointer;
-    background-color: #00b54e;
-    transition: background .5s ease-in-out; }
 
 .turq-btn {
   background-color: #3CB371;
@@ -37,12 +21,29 @@ input[type=text] {
   font-weight: 600;
   padding: 8px 20px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  transition: background .5s ease-in-out;
+  transition: background .2s ease-in-out;
   font-family: 'Raleway', sans-serif; }
   .turq-btn:hover {
     cursor: pointer;
-    background-color: #37a467;
-    transition: background .5s ease-in-out; }
+    background-color: #349c63;
+    transition: background .2s ease-in-out; }
+
+.blue-btn {
+  background-color: #00868B;
+  border-radius: 4px;
+  border: none;
+  min-height: 36px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 20px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  transition: background .2s ease-in-out;
+  font-family: 'Raleway', sans-serif; }
+  .blue-btn:hover {
+    cursor: pointer;
+    background-color: #00696c;
+    transition: background .2s ease-in-out; }
 
 /**
  * Module for styling headers and footers on pages.
@@ -80,15 +81,22 @@ input[type=text] {
     color: white;
     text-decoration: none;
     cursor: pointer;
-    transition: color .5s ease-in-out,text-shadow .5s ease-in-out; }
+    transition: color .2s ease-in-out,text-shadow .2s ease-in-out; }
     .header-wrapper a:hover {
-      transition: color .5s ease-in-out,text-shadow .5s ease-in-out;
+      transition: color .2s ease-in-out,text-shadow .2s ease-in-out;
       color: #20B2AA; }
 
 .header-search {
   float: right;
   color: white;
   line-height: 55px; }
+
+.footer-links {
+  float: right;
+  color: white;
+  line-height: 55px; }
+  .footer-links a {
+    margin-left: 5px; }
 
 #header-meet-search {
   font-size: 16px; }
@@ -133,11 +141,20 @@ input[type=text] {
   min-width: 24%;
   min-height: 10%; }
 
-.index-search-bar {
+#index-main-search {
   margin-top: 35px;
+  font-size: 18px;
   margin-bottom: 30px;
   min-width: 24%;
-  height: 10%; }
+  padding: 18px 10px 20px 10px; }
+
+#index-main-search-btn {
+  margin: -7px;
+  height: 10%;
+  width: 8%;
+  border-radius: 0px 4px 4px 0px;
+  border: 1px solid black;
+  font-size: 18px; }
 
 html, body {
   margin: 0;

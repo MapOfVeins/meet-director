@@ -49,9 +49,19 @@
     min-height: 10%;
 }
 
-.index-search-bar {
+#index-main-search {
     margin-top: 35px;
+    font-size: 18px;
     margin-bottom: 30px;
     min-width: 24%;
+    padding: 18px 10px 20px 10px;
+}
+
+#index-main-search-btn {
+    margin: -7px;
     height: 10%;
+    width: 8%;
+    border-radius: 0px 4px 4px 0px;
+    border: 1px solid black;
+    font-size: 18px;
 }

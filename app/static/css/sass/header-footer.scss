@@ -41,10 +41,10 @@
         color: white;
         text-decoration: none;
         cursor: pointer;
-        transition: color .5s ease-in-out,text-shadow .5s ease-in-out;
+        transition: color .2s ease-in-out,text-shadow .2s ease-in-out;
 
         &:hover {
-            transition: color .5s ease-in-out,text-shadow .5s ease-in-out;
+            transition: color .2s ease-in-out,text-shadow .2s ease-in-out;
             color: $light-blue-bg-color;
         }
     }
@@ -54,6 +54,16 @@
     float: right;
     color: white;
     line-height: 55px;
+}
+
+.footer-links {
+    float: right;
+    color: white;
+    line-height: 55px;
+
+    a {
+        margin-left: 5px;
+    }
 }
 
 #header-meet-search {
