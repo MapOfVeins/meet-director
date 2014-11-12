@@ -1,0 +1,57 @@
+/**
+ * Styling for the home page.
+ */
+.index-body {
+    text-align: center;
+    margin: 0;
+    padding: 61px 0 0;
+    border: 0;
+
+    h2 {
+        font-weight: 100;
+        font-size: 32px;
+        padding: 10px;
+        margin: 0;
+    }
+
+    h3 {
+        font-weight: 100;
+        font-size: 24px;
+        padding: 45px;
+        margin: 0;
+    }
+
+    p {
+        font-size: 14px;
+        padding: 30px;
+        margin: 0;
+    }
+}
+
+.index-easy-host {
+    padding-top: 50px;
+    background-color: $teal;
+    color: white;
+}
+
+.index-easy-search {
+    padding-top: 50px;
+    background-color: $light-teal;
+}
+
+.index-easy-to-use {
+    padding-top: 50px;
+}
+
+#index-create-btn {
+    font-size: 18px;
+    min-width: 24%;
+    min-height: 10%;
+}
+
+.index-search-bar {
+    margin-top: 35px;
+    margin-bottom: 30px;
+    min-width: 24%;
+    height: 10%;
+}

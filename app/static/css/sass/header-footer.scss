@@ -1,0 +1,61 @@
+/**
+ * Module for styling headers and footers on pages.
+ */
+
+/**
+ * Defines the color scheme and appearence of a page header and footer.
+ *
+ * [$height The height in px of the bookend.
+ */
+@mixin bookend($height:60px) {
+    background: $dark-blue-header-color;
+    border-bottom: 1px solid $light-blue-bg-color;
+    height: $height;
+    width: 100%;
+}
+
+.header {
+    @include bookend(60px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.footer {
+    @include bookend(80px);
+}
+
+.header-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 4%;
+
+    .header-logo {
+        float: left;
+        line-height: 17px;
+        color: white;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color .5s ease-in-out,text-shadow .5s ease-in-out;
+
+        &:hover {
+            transition: color .5s ease-in-out,text-shadow .5s ease-in-out;
+            color: $light-blue-bg-color;
+        }
+    }
+}
+
+.header-search {
+    float: right;
+    color: white;
+    line-height: 55px;
+}
+
+#header-meet-search {
+    font-size: 16px;
+}

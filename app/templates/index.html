@@ -1,0 +1,72 @@
+<html lang="en" ng-app="MeetDirector">
+    <head>
+        <meta charset="utf-8">
+        <title>MeetDirector - Host Powerlifting Meets</title>
+
+        <!-- CSS -->
+        <link href="static/css/base.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    </head>
+    <body ng-controller="MeetDirectorCtrl">
+        <div class="wrapper">
+            <header class="header">
+                <div class="header-wrapper">
+                    <h1 class="header-logo">
+                        <a href="/">MeetDirector.io</a>
+                    </h1>
+                    <div class="header-search">
+                        <input
+                            type="text"
+                            class="header-input"
+                            id="header-meet-search"
+                            placeholder="Search meets">
+                        <button class="green-btn">Search</button>
+                    </div>
+                </div>
+            </header>
+            <div class="index-body">
+                <div class="index-easy-host">
+                    <h2>Thinking of running a powerlifting meet?</h2>
+                    <h3>Host with just a click</h3>
+                    <button class="turq-btn" id="index-create-btn"> Create a new meet</button>
+                    <p>Find out why</p>
+                </div>
+
+                <div class="index-easy-search">
+                    <h2>See past meet results</h2>
+                    <h3>All meets hosted at meetdirector are saved and publicly viewable</h3>
+                    <input
+                        type="text"
+                        class="index-search-bar"
+                        id="index-main-search">
+                        <button class="turq-btn">Go</button>
+                </div>
+
+                <div class="index-easy-to-use">
+                    <h2>Why use meetdirector.io?</h2>
+                    <table>
+                        <tr>
+                            <th>It's free</th>
+                            <th>No installation or sign-up required</th>
+                        </tr>
+                        <tr>
+                            <td>No crashes</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="push"></div>
+        </div>
+        <footer class="footer"></footer>
+
+        <!-- AngularJS -->
+        <script src="static/js/vendor/angular.js"></script>
+        <script src="static/js/app.js"></script>
+        <script src="static/js/controllers/MeetDirectorController.js"></script>
+    </body>
+</html>

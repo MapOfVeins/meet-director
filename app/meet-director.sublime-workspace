@@ -1,0 +1,706 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"__",
+				"__name__	instance"
+			],
+			[
+				"from",
+				"from_object	function"
+			],
+			[
+				"n",
+				"advanced_new_file_new"
+			],
+			[
+				"User",
+				"User	class"
+			],
+			[
+				"R",
+				"Review	module"
+			],
+			[
+				"$location",
+				"$locationProvider	AngularJS"
+			],
+			[
+				"$routeP",
+				"$routeProvider	AngularJS"
+			],
+			[
+				"$locat",
+				"$locationProvider	AngularJS"
+			],
+			[
+				"$route",
+				"$routeProvider	AngularJS"
+			],
+			[
+				"$loca",
+				"$locationProvider	AngularJS(DI)"
+			],
+			[
+				"rating",
+				"rating_id	statement"
+			],
+			[
+				"par",
+				"park_school_score	statement"
+			],
+			[
+				"shopp",
+				"shopping_score	statement"
+			],
+			[
+				"gr",
+				"grocery_score	statement"
+			],
+			[
+				"transit",
+				"transit_score	statement"
+			],
+			[
+				"Flask-Res",
+				"Flask-Restless"
+			],
+			[
+				"Bi",
+				"Building"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"check",
+				"check_password_hash"
+			],
+			[
+				"logi",
+				"login_required"
+			],
+			[
+				"tenant",
+				"tenants"
+			],
+			[
+				"Prope",
+				"PropertyType"
+			],
+			[
+				"login",
+				"login_user"
+			],
+			[
+				"login_",
+				"login_manager"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"v",
+				"vertical-align"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"c",
+				"created_on"
+			],
+			[
+				"Proer",
+				"PropertyType"
+			],
+			[
+				"fizz",
+				"fizzbuzz"
+			],
+			[
+				"is_fi",
+				"is_five"
+			],
+			[
+				"is",
+				"is_fifteen"
+			],
+			[
+				"find",
+				"findcycle"
+			],
+			[
+				"adj",
+				"adj_size"
+			],
+			[
+				"merge",
+				"merge"
+			],
+			[
+				"merg",
+				"mergesort"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "__init__.py",
+			"settings":
+			{
+				"buffer_size": 69,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"show",
+				"SublimeLinter: Show Errors on Save"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"choose",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"insll",
+				"Package Control: Install Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Anaconda: Goto object definition"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reint",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inr",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inre",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 516.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/cam/workspace/meet-director"
+	],
+	"file_history":
+	[
+		"/home/cam/workspace/rentful/rentful.sublime-project",
+		"/home/cam/workspace/powerlifter-io/powerlifter.py",
+		"/home/cam/workspace/rentful/rentful/templates/home/home.html",
+		"/home/cam/workspace/rentful/rentful/__init__.py",
+		"/home/cam/workspace/rentful/rentful/views.py",
+		"/home/cam/workspace/rentful/config.py",
+		"/home/cam/workspace/rentful/run.py",
+		"/home/cam/workspace/meetdirector/templates/home.html",
+		"/home/cam/workspace/powerlifter-io/run.py",
+		"/home/cam/workspace/meetdirector/meetdirector.py",
+		"/home/cam/Documents/nighton-server/nighton.py",
+		"/home/cam/workspace/meetdirector/meetdirector/__init__.py",
+		"/home/cam/workspace/meetdirector/meetdirector/views.py",
+		"/home/cam/workspace/meetdirector/config.py",
+		"/home/cam/workspace/rentful/rentful/models/review.py",
+		"/home/cam/workspace/meetdirector/meetdirector/meetdirector.py",
+		"/home/cam/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/cam/workspace/meetdirector-io/run.py",
+		"/home/cam/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/cam/.config/sublime-text-3/Packages/User/Python.sublime-settings",
+		"/home/cam/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
+		"/home/cam/workspace/rentful/rentful/models/Review.pyc",
+		"/home/cam/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/cam/workspace/rentful/db_create.py",
+		"/home/cam/workspace/rentful/db_downgrade.py",
+		"/home/cam/razer-settings.sh",
+		"/home/cam/.bashrc",
+		"/home/cam/workspace/rentful/rentful/templates/feed/feed.html",
+		"/home/cam/workspace/rentful/rentful/static/js/feed/controllers.js",
+		"/home/cam/workspace/rentful/rentful/static/js/global/services.js",
+		"/home/cam/workspace/rentful/rentful/static/js/app.js",
+		"/home/cam/workspace/rentful/rentful/models/rating.py",
+		"/home/cam/workspace/rentful/rentful/models/user.py",
+		"/home/cam/workspace/rentful/rentful/forms/LoginForm.py",
+		"/home/cam/workspace/rentful/rentful/models.py",
+		"/home/cam/workspace/rentful/rentful/models/__init__.py",
+		"/home/cam/workspace/rentful/rentful/forms.py",
+		"/home/cam/workspace/rentful/rentful/forms/RegisterForm.py",
+		"/home/cam/workspace/rentful/rentful/forms/AddPropertyForm.py",
+		"/home/cam/workspace/rentful/rentful/forms/__init__.py",
+		"/home/cam/workspace/rentful/rentful/static/js/lib/angular-resource.js",
+		"/home/cam/workspace/rentful/rentful/static/js/lib/angular.js",
+		"/home/cam/workspace/rentful/rentful/static/js/lib/angular-resource.min.js",
+		"/home/cam/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/cam/workspace/subl-config/README.md",
+		"/home/cam/workspace/subl-config/.git/COMMIT_EDITMSG",
+		"/home/cam/workspace/subl-config/Preferences.sublime-settings",
+		"/home/cam/workspace/rentful/test/test_login_logout.py",
+		"/home/cam/workspace/rentful/README.md",
+		"/home/cam/workspace/rentful/.gitignore",
+		"/home/cam/workspace/rentful/db_repository/versions/004_migration.py",
+		"/home/cam/workspace/rentful/db_repository/manage.py",
+		"/home/cam/workspace/rentful/lib/python2.7/site-packages/pip/vcs/git.py",
+		"/home/cam/workspace/rentful/include/python2.7/genobject.h",
+		"/home/cam/workspace/rentful/requirements.txt",
+		"/home/cam/workspace/rentful/tests.py",
+		"/home/cam/workspace/rentful/test/__init__.py",
+		"/home/cam/workspace/rentful/test/tests.py",
+		"/home/cam/workspace/rentful/rentful/templates/register.html",
+		"/home/cam/workspace/rentful/lib/python2.7/site-packages/setuptools/tests/test_easy_install.py",
+		"/home/cam/workspace/rentful/instance/config.py",
+		"/home/cam/workspace/rentful/rentful.db",
+		"/home/cam/workspace/rentful/rentful/templates/login.html",
+		"/home/cam/workspace/rentful/rentful/templates/base-login.html",
+		"/home/cam/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/cam/workspace/rentful/rentful/templates/base-nologin.html",
+		"/home/cam/workspace/rentful/rentful/static/js/feed/feedController.js",
+		"/home/cam/workspace/rentful/rentful/static/js/feedController.js",
+		"/home/cam/workspace/rentful/rentful/static/css/main.css",
+		"/home/cam/workspace/rentful/rentful/templates/base-nologin .html",
+		"/home/cam/workspace/rentful/rentful/templates/base.html",
+		"/home/cam/workspace/rentful/include/python2.7/cStringIO.h",
+		"/home/cam/workspace/rentful/rentful/templates/layout.html",
+		"/home/cam/workspace/rentful/db_upgrade.py",
+		"/home/cam/workspace/rentful/db_migrate.py",
+		"/home/cam/workspace/rentful/include/python2.7/longintrepr.h",
+		"/home/cam/workspace/rentful/include/python2.7/listobject.h",
+		"/home/cam/workspace/rentful/rentful/manage.py",
+		"/home/cam/workspace/rentful/include/python2.7/node.h",
+		"/home/cam/workspace/rentful/rentful/views/home.py",
+		"/home/cam/workspace/rentful/lib/python2.7/encodings/raw_unicode_escape.py",
+		"/home/cam/workspace/rentful/lib/python2.7/site-packages/pip/_vendor/colorama/initialise.py",
+		"/home/cam/workspace/rentful/lib/python2.7/site-packages/setuptools/command/install_egg_info.py",
+		"/home/cam/workspace/rentful/include/python2.7/intobject.h",
+		"/home/cam/workspace/rentful/include/python2.7/Imaging.h",
+		"/home/cam/workspace/rentspur/run.py",
+		"/home/cam/workspace/rentspur/rentspur/models.py",
+		"/home/cam/workspace/rentspur/requirements.txt",
+		"/home/cam/workspace/rentspur/rentspur/__init__.py",
+		"/home/cam/workspace/rentspur/instance/config.py",
+		"/home/cam/workspace/rentspur/.gitignore",
+		"/home/cam/.config/sublime-text-3/Packages/GoSublime/CHANGELOG.md",
+		"/home/cam/.config/sublime-text-3/Packages/GoSublime/USAGE.md",
+		"/home/cam/workspace/golang/src/hello/hello.go",
+		"/home/cam/workspace/golang/src/newmath/sqrt.go",
+		"/home/cam/workspace/rentspur/hello.py",
+		"/home/cam/Documents/nighton-server/flaskr.py",
+		"/home/cam/workspace/golang/src/hello.go",
+		"/home/cam/workspace/myMeanApp/package.json",
+		"/home/cam/workspace/myMeanApp/public/auth/auth.js",
+		"/home/cam/workspace/myMeanApp/server.js",
+		"/home/cam/workspace/myMeanApp/public/init.js",
+		"/home/cam/workspace/mean-stripdown/package.json",
+		"/home/cam/workspace/mean-stripdown/server.js",
+		"/home/cam/workspace/mean-stripdown/node_modules/bower/templates/std/search-results.std",
+		"/home/cam/workspace/myMeanApp/public/system/views/index.html",
+		"/home/cam/workspace/myMeanApp/server/views/layouts/default.html",
+		"/home/cam/workspace/myMeanApp/packages/articles/app.js",
+		"/home/cam/workspace/nighton/NightOn/src/main/java/com/mapofveins/nighton/activity/MainActivity.java",
+		"/home/cam/workspace/nighton/NightOn/src/main/java/com/mapofveins/nighton/activity/BrowseAllActivity.java",
+		"/home/cam/workspace/fusein/src/test/resources/tokens/uploadtest.txt",
+		"/home/cam/workspace/fusein/src/test/resources/tokens/dropbox.token",
+		"/home/cam/workspace/fusein/src/test/resources/tokens/gdrive.token",
+		"/home/cam/workspace/fusein/conf.properties",
+		"/home/cam/workspace/fusein/.git/COMMIT_EDITMSG",
+		"/home/cam/workspace/fusein/conf.refresh",
+		"/home/cam/workspace/cpp/stack.cpp",
+		"/home/cam/workspace/cpp/virtualmethod",
+		"/home/cam/workspace/cpp/binarytree.cpp",
+		"/home/cam/workspace/cpp/collections.cpp",
+		"/home/cam/workspace/cpp/strings.java",
+		"/home/cam/workspace/cpp/fizzbuzz.cpp",
+		"/home/cam/workspace/cpp/linkedlist.cpp",
+		"/home/cam/workspace/cpp/queue.cpp",
+		"/home/cam/workspace/cpp/recursion.cpp",
+		"/home/cam/workspace/cpp/searches.cpp",
+		"/home/cam/workspace/cpp/sorts.cpp",
+		"/home/cam/workspace/cpp/doublylinkedlist"
+	],
+	"find":
+	{
+		"height": 54.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"')\n",
+			"ruler",
+			"#107604",
+			"five"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#cdc9c9",
+			"fifteen"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 69,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								69
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o:///home/cam/workspace/golang/src/hello":
+	{
+		"height": 110.0
+	},
+	"output.MarGo-output":
+	{
+		"height": 110.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "meet-director.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"gitig",
+				".gitignore"
+			],
+			[
+				"register",
+				"rentful/templates/register.html"
+			],
+			[
+				"test",
+				"tests.py"
+			],
+			[
+				"regist",
+				"rentful/templates/register.html"
+			],
+			[
+				"models",
+				"rentful/models.py"
+			],
+			[
+				"css",
+				"rentful/static/css/main.css"
+			],
+			[
+				"login",
+				"rentful/templates/login.html"
+			],
+			[
+				"requi",
+				"requirements.txt"
+			],
+			[
+				"logi",
+				"rentful/templates/login.html"
+			],
+			[
+				"navbar",
+				"rentful/static/css/navbar.css"
+			],
+			[
+				"homt",
+				"rentful/templates/home/home.html"
+			],
+			[
+				"re",
+				"requirements.txt"
+			],
+			[
+				"vi",
+				"rentful/views.py"
+			],
+			[
+				"model",
+				"rentful/models.py"
+			],
+			[
+				"config",
+				"instance/config.py"
+			],
+			[
+				"init",
+				"rentful/__init__.py"
+			],
+			[
+				"__ini",
+				"rentful/__init__.py"
+			],
+			[
+				"ser",
+				"server.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 270.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

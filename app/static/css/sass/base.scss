@@ -1,0 +1,30 @@
+$dark-blue-header-color: #00688B;
+$light-blue-bg-color: #20B2AA;
+$teal: #008080;
+$light-teal: #BBFFFF;
+
+$green-btn-color: #00C957;
+$turq-btn-color: #3CB371;
+
+@import 'forms';
+@import 'buttons';
+
+@import 'header-footer';
+@import 'index';
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+
+.footer, .push {
+    height: 80px;
+}
