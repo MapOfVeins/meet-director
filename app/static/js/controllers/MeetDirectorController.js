@@ -4,6 +4,5 @@
 
     APP.controller('MeetDirectorCtrl', ['$scope', function($scope) {
 
-        $scope.tester = 'Hello meetdirector!';
     }]);
 })();

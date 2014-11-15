@@ -6,11 +6,13 @@ $light-teal: #BBFFFF;
 $turq-btn-color: #3CB371;
 $blue-btn-color: #00868B;
 
+@import 'body';
 @import 'forms';
 @import 'buttons';
 
 @import 'header-footer';
 @import 'index';
+@import 'create';
 
 html, body {
     margin: 0;

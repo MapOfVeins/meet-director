@@ -1,0 +1,39 @@
+.create-body {
+    @extend %main-body;
+    text-align: left;
+
+    h2 {
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+}
+
+.create-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.create-input-wrapper {
+    margin-bottom: 15px;
+    margin-left: 120px;
+}
+
+.create-input-label {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+}
+
+.create-input-field {
+    display: inline-block;
+    min-width: 40%;
+    margin-left: 8px;
+}
+
+#create-form-btn {
+    margin: 0 auto;
+    display: inherit;
+    margin-top: 50px;
+}

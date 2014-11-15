@@ -1,13 +1,13 @@
 <html lang="en" ng-app="MeetDirector">
     <head>
         <meta charset="utf-8">
-        <title>MeetDirector - Host Powerlifting Meets</title>
+        <title>MeetDirector - Create A Meet</title>
 
         <!-- CSS -->
         <link href="static/css/base.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     </head>
-    <body ng-controller="MeetDirectorCtrl">
+    <body ng-controller="CreateMeetCtrl">
         <div class="wrapper">
             <header class="header">
                 <div class="header-wrapper">
@@ -21,34 +21,13 @@
                             id="header-meet-search"
                             placeholder="Search meets">
                         <button class="blue-btn">Search</button>
-                        <button class="blue-btn">Create</button>
                     </div>
                 </div>
             </header>
-            <div class="index-body">
-                <div class="index-easy-host">
-                    <h2>Thinking of running a powerlifting meet?</h2>
-                    <h3>Host with just a click</h3>
-                    <form action="/create">
-                        <button
-                        type="submit"
-                        class="turq-btn"
-                        id="index-create-btn"> Create a new meet</button>
-                    </form>
-                    <p>Find out why</p>
-                </div>
-
-                <div class="index-easy-search">
-                    <h2>See past meet results</h2>
-                    <h3>All meets hosted at MeetDirector are saved and publicly viewable</h3>
-                    <input
-                        type="text"
-                        id="index-main-search">
-                        <button class="turq-btn" id="index-main-search-btn">Go</button>
-                </div>
-
-                <div class="index-easy-to-use">
-                    <h2>Why use MeetDirector?</h2>
+            <div class="create-wrapper">
+                <div class="create-body">
+                    <h2> Create A Meet </h2>
+                    <div ng-include="currentStage"></div>
                 </div>
             </div>
             <div class="push"></div>
@@ -68,5 +47,7 @@
         <script src="static/js/vendor/angular.js"></script>
         <script src="static/js/app.js"></script>
         <script src="static/js/controllers/MeetDirectorController.js"></script>
+        <script src="static/js/controllers/CreateMeetController.js"></script>
+        <script src="static/js/directives/createMeetDirective.js"></script>
     </body>
 </html>

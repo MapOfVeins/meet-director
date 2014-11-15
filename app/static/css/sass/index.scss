@@ -2,30 +2,7 @@
  * Styling for the home page.
  */
 .index-body {
-    text-align: center;
-    margin: 0;
-    padding: 61px 0 0;
-    border: 0;
-
-    h2 {
-        font-weight: 100;
-        font-size: 32px;
-        padding: 10px;
-        margin: 0;
-    }
-
-    h3 {
-        font-weight: 100;
-        font-size: 24px;
-        padding: 45px;
-        margin: 0;
-    }
-
-    p {
-        font-size: 14px;
-        padding: 30px;
-        margin: 0;
-    }
+    @extend %main-body;
 }
 
 .index-easy-host {

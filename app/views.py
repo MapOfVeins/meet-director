@@ -8,6 +8,11 @@ def index():
     return make_response(open('app/templates/index.html').read())
 
 
+@app.route('/create')
+def create():
+    return make_response(open('app/templates/create.html').read())
+
+
 @app.route('/about')
 def about():
     pass

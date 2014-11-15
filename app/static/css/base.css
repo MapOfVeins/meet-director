@@ -1,4 +1,27 @@
 /**
+ * Sub module for body styling.
+ */
+.index-body, .create-body {
+  text-align: center;
+  margin: 0;
+  padding: 61px 0 0;
+  border: 0; }
+  .index-body h2, .create-body h2 {
+    font-weight: 100;
+    font-size: 32px;
+    padding: 10px;
+    margin: 0; }
+  .index-body h3, .create-body h3 {
+    font-weight: 100;
+    font-size: 24px;
+    padding: 45px;
+    margin: 0; }
+  .index-body p, .create-body p {
+    font-size: 14px;
+    padding: 30px;
+    margin: 0; }
+
+/**
  * Styling for form inputs.
  */
 input[type=text] {
@@ -104,26 +127,6 @@ input[type=text] {
 /**
  * Styling for the home page.
  */
-.index-body {
-  text-align: center;
-  margin: 0;
-  padding: 61px 0 0;
-  border: 0; }
-  .index-body h2 {
-    font-weight: 100;
-    font-size: 32px;
-    padding: 10px;
-    margin: 0; }
-  .index-body h3 {
-    font-weight: 100;
-    font-size: 24px;
-    padding: 45px;
-    margin: 0; }
-  .index-body p {
-    font-size: 14px;
-    padding: 30px;
-    margin: 0; }
-
 .index-easy-host {
   padding-top: 50px;
   background-color: #008080;
@@ -155,6 +158,37 @@ input[type=text] {
   border-radius: 0px 4px 4px 0px;
   border: 1px solid black;
   font-size: 18px; }
+
+.create-body {
+  text-align: left; }
+  .create-body h2 {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 30px; }
+
+.create-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 4%; }
+
+.create-input-wrapper {
+  margin-bottom: 15px;
+  margin-left: 120px; }
+
+.create-input-label {
+  display: inline-block;
+  width: 20%;
+  text-align: right; }
+
+.create-input-field {
+  display: inline-block;
+  min-width: 40%;
+  margin-left: 8px; }
+
+#create-form-btn {
+  margin: 0 auto;
+  display: inherit;
+  margin-top: 50px; }
 
 html, body {
   margin: 0;
