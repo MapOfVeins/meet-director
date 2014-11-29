@@ -1,4 +1,4 @@
-@mixin primary-btn($color:$turq-btn-color) {
+@mixin primary-btn($color:$nephritis-green) {
     background-color: $color;
     border-radius: 4px;
     border: none;
@@ -14,14 +14,14 @@
     &:hover {
         cursor: pointer;
         background-color: darken($color, 6%);
-        transition: background .2s ease-in-out;
+        transition: background .2s ease-in;
     }
 }
 
-.turq-btn {
-    @include primary-btn($turq-btn-color);
+.green-btn {
+    @include primary-btn($nephritis-green);
 }
 
-.blue-btn {
-    @include primary-btn($blue-btn-color);
+.red-btn {
+    @include primary-btn($alizarin-red);
 }

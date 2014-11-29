@@ -1,3 +1,15 @@
+@mixin input-field($width:40%) {
+    display: inline-block;
+    min-width: $width;
+    margin-left: 8px;
+}
+
+@mixin input-label($width:20%) {
+    display: inline-block;
+    width: $width;
+    text-align: right;
+}
+
 .create-body {
     @extend %main-body;
     text-align: left;
@@ -10,30 +22,123 @@
 }
 
 .create-wrapper {
-    max-width: 800px;
+    max-width: 1100px;
+    min-height: 500px;
     margin: 0 auto;
-    padding: 0 4%;
+    padding: 0 2%;
 }
 
 .create-input-wrapper {
     margin-bottom: 15px;
-    margin-left: 120px;
 }
 
 .create-input-label {
-    display: inline-block;
-    width: 20%;
-    text-align: right;
+    @include input-label(15%);
 }
 
 .create-input-field {
-    display: inline-block;
-    min-width: 40%;
-    margin-left: 8px;
+    @include input-field(25%);
 }
 
-#create-form-btn {
-    margin: 0 auto;
-    display: inherit;
+.create-form-btn {
+    margin-left: 170px;
     margin-top: 50px;
+}
+
+.lifter-list {
+    background-color: $clouds-white;
+    display: inline-block;
+    float: right;
+    width: 600px;
+    height: 382px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    hr {
+        height: 2px;
+        border: none;
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(0.5, rgb(221,221,221)),
+          color-stop(0.5, rgb(255,255,255))
+        );
+        background-image: -moz-linear-gradient(
+          center top,
+          rgb(221,221,221) 50%,
+          rgb(255,255,255) 50%
+        );
+    }
+}
+
+.create-input-field-short {
+    @include input-field(19%);
+}
+
+.create-input-field-opener {
+    @include input-field(15%);
+    width: 192px;
+}
+
+.create-input-label-short {
+    @include input-label(15%);
+}
+
+.create-input-label-opener {
+    @include input-label(42%);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.lifter-form {
+    display: inline-block;
+    width: 500px;
+    float: left;
+}
+
+.upload-form-btn {
+    margin-bottom: 30px;
+}
+
+.add-lifter-btn {
+    margin-left: 94px;
+    margin-top: 10px;
+}
+
+.lifter-list-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    border-bottom: 1px solid white;
+    background: darken($clouds-white, 3%);
+}
+
+.lifter-list-openers {
+    float: right;
+    padding-right: 20px;
+    margin-top: 5px;
+}
+
+.lifter-list-details {
+    padding-left: 10px;
+    height: 24px;
+    font-size: 14px;
+}
+
+.create-meet-btn {
+    float: right;
+    width: 175px;
+}
+
+.init-meet-wrapper {
+    margin-left: 333px;
+}
+
+.lifter-delete-btn {
+    min-height: 22px;
+    font-size: 14px;
+    width: 67px;
+    font-weight: 500;
+    padding: 0;
 }

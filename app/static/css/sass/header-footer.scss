@@ -8,8 +8,8 @@
  * [$height The height in px of the bookend.
  */
 @mixin bookend($height:60px) {
-    background: $dark-blue-header-color;
-    border-bottom: 1px solid $light-blue-bg-color;
+    background: $midnight-blue;
+    border-bottom: 1px solid $concrete-gray;
     height: $height;
     width: 100%;
 }
@@ -45,7 +45,7 @@
 
         &:hover {
             transition: color .2s ease-in-out,text-shadow .2s ease-in-out;
-            color: $light-blue-bg-color;
+            color: $concrete-gray;
         }
     }
 }

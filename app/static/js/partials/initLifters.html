@@ -1,28 +1,84 @@
 <div>
-Upload a text file:
+    <button
+        class="red-btn"
+        ng-click="returnToInit()"
+        >< Back
+    </button>
+    <button
+        class="red-btn upload-form-btn"
+        >Upload a text file
+    </button>
+    <button
+        class="red-btn create-meet-btn"
+        >Create Meet!
+    </button>
 </div>
-<div>
+<section class="lifter-form">
+    <form ng-submit="addNewLifter()">
     <div class="create-input-wrapper">
         <label class="create-input-label">Name:</label>
-        <input type="text" id="lifter-name" class="create-input-field">
+        <input type="text" id="lifter-name" class="create-input-field" ng-model="currentLifter.name">
     </div>
 
+    <div class="create-input-wrapper">
+        <label class="create-input-label">Gender:</label>
+        <select
+            class="create-input-field-short"
+            ng-model="currentLifter.gender"
+            ng-change="switchWeightClasses()">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
     <div class="create-input-wrapper">
         <label class="create-input-label">Class:</label>
-        <input type="text" id="lifter-class" class="create-input-field">
+        <select
+            class="create-input-field-short"
+            ng-model="currentLifter.weightClass"
+            ng-options="class for class in weightClasses">
+        </select>
     </div>
 
     <div class="create-input-wrapper">
-        <label class="create-input-label">Openers</label>
-        <input type="text" id="lifter-class" class="create-input-field">
+        <label class="create-input-label-opener">Openers (kg)</label>
+
+        <div class="create-input-wrapper">
+            <label class="create-input-label-short">Squat:</label>
+            <input type="text" class="create-input-field-short" ng-model="currentLifter.squat">
+        </div>
+        <div class="create-input-wrapper">
+            <label class="create-input-label-short">Bench:</label>
+            <input type="text" class="create-input-field-short" ng-model="currentLifter.bench">
+        </div>
+        <div class="create-input-wrapper">
+            <label class="create-input-label-short">Deadlift:</label>
+            <input type="text" class="create-input-field-short" ng-model="currentLifter.deadlift">
+        </div>
     </div>
     <button
-        class="turq-btn"
-        ng-click="setCurrentStage('/static/js/partials/initMeet.html')"
-        >Back
+        class="green-btn add-lifter-btn"
+        type="submit"
+        >Add this lifter
     </button>
-    <button
-        class="turq-btn"
-        >Continue
-    </button>
-</div>
+    </form>
+</section>
+<section class="lifter-list">
+    <div class="lifter-list-title">Lifter List</div>
+    <div ng-repeat="lifter in meet.lifters">
+        <div class="lifter-list-details">
+            <button
+                class="green-btn lifter-delete-btn"
+                ng-click="removeLifter(lifter)"
+                >Remove
+            </button>
+            <strong>{{lifter.name}}</strong>
+            {{lifter.weightClass}}
+            <span class="lifter-list-openers">
+                Squat: {{lifter.squat}}kg
+                Bench: {{lifter.bench}}kg
+                Deadlift: {{lifter.deadlift}}kg
+            </span>
+        </div>
+        <hr />
+    </div>
+</section>

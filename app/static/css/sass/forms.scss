@@ -13,3 +13,17 @@ input[type=text] {
         border: 1px solid black;
     }
 }
+
+select {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif;
+    min-height: 36px;
+    padding: 7px 10px;
+    box-shadow: inset 2px 2px 5px -1px rgba(0,0,0,0.6);
+
+    &:active {
+        border: 1px solid black;
+    }
+}
