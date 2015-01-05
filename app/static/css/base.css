@@ -26,7 +26,6 @@
  */
 input[type=text] {
   border: 1px solid black;
-  border-radius: 4px;
   font-family: 'Raleway', sans-serif;
   min-height: 36px;
   padding: 7px 10px;
@@ -37,7 +36,6 @@ input[type=text] {
 select {
   background-color: white;
   border: 1px solid black;
-  border-radius: 4px;
   font-family: 'Raleway', sans-serif;
   min-height: 36px;
   padding: 7px 10px;
@@ -47,7 +45,6 @@ select {
 
 .green-btn {
   background-color: #27ae60;
-  border-radius: 4px;
   border: none;
   min-height: 36px;
   color: white;
@@ -64,7 +61,6 @@ select {
 
 .red-btn {
   background-color: #e74c3c;
-  border-radius: 4px;
   border: none;
   min-height: 36px;
   color: white;
@@ -78,6 +74,26 @@ select {
     cursor: pointer;
     background-color: #e43321;
     transition: background .2s ease-in; }
+
+.animate-add-remove-lifter.ng-move,
+.animate-add-remove-lifter.ng-enter,
+.animate-add-remove-lifter.ng-leave {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all; }
+
+.animate-add-remove-lifter.ng-leave.ng-leave-active,
+.animate-add-remove-lifter.ng-move,
+.animate-add-remove-lifter.ng-enter {
+  opacity: 0;
+  max-height: 0; }
+
+.animate-add-remove-lifter.ng-leave,
+.animate-add-remove-lifter.ng-move.ng-move-active,
+.animate-add-remove-lifter.ng-enter.ng-enter-active {
+  opacity: 1;
+  max-height: 24px; }
 
 /**
  * Module for styling headers and footers on pages.
@@ -101,7 +117,8 @@ select {
   background: #2c3e50;
   border-bottom: 1px solid #95a5a6;
   height: 80px;
-  width: 100%; }
+  width: 100%;
+  clear: both; }
 
 .header-wrapper {
   max-width: 1000px;
@@ -175,6 +192,11 @@ select {
     text-align: center;
     padding-top: 40px;
     padding-bottom: 30px; }
+  .create-body hr {
+    height: 2px;
+    border: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #dddddd), color-stop(0.5, white));
+    background-image: -moz-linear-gradient(center top, #dddddd 50%, white 50%); }
 
 .create-wrapper {
   max-width: 1100px;
@@ -204,19 +226,20 @@ select {
   display: inline-block;
   float: right;
   width: 600px;
-  height: 382px;
+  height: 431px;
   overflow-x: hidden;
   overflow-y: auto; }
-  .lifter-list hr {
-    height: 2px;
-    border: none;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #dddddd), color-stop(0.5, white));
-    background-image: -moz-linear-gradient(center top, #dddddd 50%, white 50%); }
 
 .create-input-field-short {
   display: inline-block;
   min-width: 19%;
   margin-left: 8px; }
+
+.create-input-field-lifts {
+  display: inline-block;
+  min-width: 13%;
+  margin-left: 8px;
+  width: 19%; }
 
 .create-input-field-opener {
   display: inline-block;
@@ -229,9 +252,15 @@ select {
   width: 15%;
   text-align: right; }
 
+.create-input-label-lifts {
+  display: inline-block;
+  width: 19%;
+  text-align: right;
+  font-weight: 600; }
+
 .create-input-label-opener {
   display: inline-block;
-  width: 42%;
+  width: 37%;
   text-align: right;
   margin-bottom: 10px;
   font-weight: 600; }
@@ -239,6 +268,7 @@ select {
 .lifter-form {
   display: inline-block;
   width: 500px;
+  height: 447px;
   float: left; }
 
 .upload-form-btn {
@@ -278,6 +308,93 @@ select {
   width: 67px;
   font-weight: 500;
   padding: 0; }
+
+#lifter-name {
+  min-width: 60%; }
+
+.meet-flight-nav {
+  width: 70%;
+  display: inline-block;
+  padding: 10px 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #95a5a6; }
+
+.meet-lift-nav {
+  width: 25%;
+  display: inline-block;
+  padding: 10px 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #95a5a6; }
+
+.meet-left-panel {
+  width: 74%;
+  display: inline-block;
+  float: left; }
+  .meet-left-panel .meet-bar-display {
+    width: 48%;
+    height: 175px;
+    display: inline-block;
+    border: 1px solid #95a5a6;
+    padding: 10px 10px;
+    margin-bottom: 15px; }
+  .meet-left-panel .meet-lifter-info {
+    width: 42%;
+    height: 175px;
+    display: inline-block;
+    border: 1px solid #95a5a6;
+    padding: 10px 10px;
+    margin-bottom: 15px; }
+  .meet-left-panel .meet-current-lift {
+    width: 21%;
+    height: 125px;
+    display: inline-block;
+    border: 1px solid #95a5a6;
+    padding: 10px 10px;
+    margin-bottom: 15px; }
+  .meet-left-panel .meet-timer {
+    width: 47%;
+    height: 125px;
+    display: inline-block;
+    border: 1px solid #95a5a6;
+    padding: 10px 10px;
+    margin-bottom: 15px; }
+  .meet-left-panel .meet-lift-result {
+    width: 19%;
+    height: 125px;
+    display: inline-block;
+    border: 1px solid #95a5a6;
+    padding: 10px 10px;
+    margin-bottom: 15px; }
+
+.meet-right-panel {
+  width: 25%;
+  display: inline-block; }
+  .meet-right-panel .meet-result-summary {
+    width: 100%;
+    height: 337px;
+    display: inline-block;
+    border: 1px solid #95a5a6;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    margin-left: -17px; }
+
+.meet-event-nav {
+  width: 70%;
+  display: inline-block;
+  padding: 10px 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #95a5a6; }
+
+.meet-nav {
+  width: 25%;
+  display: inline-block;
+  padding: 10px 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #95a5a6; }
 
 html, body {
   margin: 0;

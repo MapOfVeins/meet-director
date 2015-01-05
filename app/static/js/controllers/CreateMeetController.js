@@ -44,12 +44,24 @@
         };
 
         $scope.addNewLifter = function() {
+            var weightNum,
+                weightSubString;
+
+            if ($scope.currentLifter.weightClass.indexOf('+') > -1) {
+                // Set weightNum to a dummy value greater than all
+                // weight classes. This number is just for sorting.
+                weightNum = 121;
+            } else {
+                // convert weight class to int and add a seperate obj key
+                weightNum = parseInt($scope.currentLifter.weightClass.slice(0, -2));
+            }
+
+            $scope.currentLifter.weight = weightNum;
             $scope.meet.lifters.push($scope.currentLifter);
             $scope.currentLifter = {};
         };
 
         $scope.switchWeightClasses = function () {
-            console.log($scope.currentLifter);
             if ($scope.currentLifter.gender === 'male') {
                 $scope.weightClasses = $scope.maleWeightClasses;
             } else {
@@ -63,6 +75,50 @@
 
         $scope.removeLifter = function(lifter) {
             $scope.meet.lifters.splice($scope.meet.lifters.indexOf(lifter), 1);
+        };
+
+        $scope.createFlights = function() {
+            var numFlights,
+                flightSize = 12,
+                numLifters = $scope.meet.lifters.length;
+
+            // sort our lifter array by weight class
+            $scope.meet.lifters.sort($scope.compareLiftersByWeight);
+
+            // split the array into flights (max 12 per flight)
+
+            // order the flights by opening squats
+
+        };
+
+        $scope.compareLiftersByWeight = function(lifterOne, lifterTwo) {
+            if (lifterOne.weight < lifterTwo.weight) {
+                return -1;
+            }
+            if (lifterOne.weight > lifterTwo.weight) {
+                return 1;
+            }
+            return 0;
+        };
+
+        $scope.compareFlightsByOpener = function(lifterOne, lifterTwo) {
+            if (lifterOne.squat < lifterTwo.squat) {
+                return -1;
+            }
+            if (lifterOne.squat > lifterTwo.squat) {
+                return 1;
+            }
+            return 0;
+        };
+
+        $scope.createMeet = function() {
+            if ($scope.meet.lifters.length > 0) {
+                $scope.createFlights();
+                $scope.currentStage = PARTIALS_PATH + 'meet.html';
+            } else {
+                // TODO: better notification
+                window.alert('You cant create a meet with no lifters!');
+            }
         };
 
     }]);

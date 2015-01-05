@@ -8,6 +8,7 @@
     angular.module(APP, [
         APP + '.controllers',
         APP + '.services',
-        APP + '.directives'
+        APP + '.directives',
+        'ngAnimate'
     ]);
 })();

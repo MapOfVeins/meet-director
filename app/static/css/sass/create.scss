@@ -19,6 +19,23 @@
         padding-top: 40px;
         padding-bottom: 30px;
     }
+
+    hr {
+        height: 2px;
+        border: none;
+        background-image: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            color-stop(0.5, rgb(221,221,221)),
+            color-stop(0.5, rgb(255,255,255))
+        );
+        background-image: -moz-linear-gradient(
+            center top,
+            rgb(221,221,221) 50%,
+            rgb(255,255,255) 50%
+        );
+    }
 }
 
 .create-wrapper {
@@ -50,30 +67,18 @@
     display: inline-block;
     float: right;
     width: 600px;
-    height: 382px;
+    height: 431px;
     overflow-x: hidden;
     overflow-y: auto;
-
-    hr {
-        height: 2px;
-        border: none;
-        background-image: -webkit-gradient(
-          linear,
-          left top,
-          left bottom,
-          color-stop(0.5, rgb(221,221,221)),
-          color-stop(0.5, rgb(255,255,255))
-        );
-        background-image: -moz-linear-gradient(
-          center top,
-          rgb(221,221,221) 50%,
-          rgb(255,255,255) 50%
-        );
-    }
 }
 
 .create-input-field-short {
     @include input-field(19%);
+}
+
+.create-input-field-lifts {
+    @include input-field(13%);
+    width: 19%;
 }
 
 .create-input-field-opener {
@@ -85,8 +90,13 @@
     @include input-label(15%);
 }
 
+.create-input-label-lifts {
+    @include input-label(19%);
+    font-weight: 600;
+}
+
 .create-input-label-opener {
-    @include input-label(42%);
+    @include input-label(37%);
     margin-bottom: 10px;
     font-weight: 600;
 }
@@ -94,6 +104,7 @@
 .lifter-form {
     display: inline-block;
     width: 500px;
+    height: 447px;
     float: left;
 }
 
@@ -141,4 +152,8 @@
     width: 67px;
     font-weight: 500;
     padding: 0;
+}
+
+#lifter-name {
+    min-width: 60%;
 }

@@ -1,0 +1,22 @@
+.animate-add-remove-lifter.ng-move,
+.animate-add-remove-lifter.ng-enter,
+.animate-add-remove-lifter.ng-leave {
+  -webkit-transition: all linear 0.5s;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.animate-add-remove-lifter.ng-leave.ng-leave-active,
+.animate-add-remove-lifter.ng-move,
+.animate-add-remove-lifter.ng-enter {
+  opacity: 0;
+  max-height: 0;
+}
+
+.animate-add-remove-lifter.ng-leave,
+.animate-add-remove-lifter.ng-move.ng-move-active,
+.animate-add-remove-lifter.ng-enter.ng-enter-active {
+  opacity: 1;
+  max-height: 24px;
+}
