@@ -10,7 +10,47 @@
             fed: '',
             director: '',
             startDate: '',
-            lifters: []
+            lifters: {
+                // TODO test data
+                all: [
+                    {
+                        name: 'test lifter',
+                        age: 28,
+                        gender: 'male',
+                        weightClass: '120kg',
+                        weightNum: 121,
+                        squat: 212.5,
+                        bench: 147.5,
+                        deadlift: 220
+                    }
+                ],
+                male: [
+                {
+                    name: 'test lifter',
+                    age: 28,
+                    gender: 'male',
+                    weightClass: '120kg',
+                    weightNum: 121,
+                    squat: 212.5,
+                    bench: 147.5,
+                    deadlift: 220
+                }
+                ],
+                female: []
+            },
+            flights: {
+                male: [                {
+                    name: 'test lifter',
+                    age: 28,
+                    gender: 'male',
+                    weightClass: '120kg',
+                    weightNum: 121,
+                    squat: 212.5,
+                    bench: 147.5,
+                    deadlift: 220
+                }],
+                female: []
+            }
         };
 
         $scope.currentLifter = {};
@@ -37,7 +77,7 @@
             '120kg+'
         ];
 
-        $scope.currentStage = PARTIALS_PATH + 'initMeet.html';
+        $scope.currentStage = PARTIALS_PATH + 'meet.html';
 
         $scope.setCurrentStage = function(stage) {
             $scope.currentStage = stage;
@@ -53,11 +93,24 @@
                 weightNum = 121;
             } else {
                 // convert weight class to int and add a seperate obj key
-                weightNum = parseInt($scope.currentLifter.weightClass.slice(0, -2));
+                weightNum = parseInt($scope.currentLifter.weightClass.slice(0, -2), 10);
             }
 
+            // convert openers to ints as well, for sorting purposes
+            $scope.currentLifter.squat = parseInt($scope.currentLifter.squat, 10);
+            $scope.currentLifter.bench = parseInt($scope.currentLifter.bench, 10);
+            $scope.currentLifter.deadlift = parseInt($scope.currentLifter.deadlift, 10);
+
             $scope.currentLifter.weight = weightNum;
-            $scope.meet.lifters.push($scope.currentLifter);
+            $scope.meet.lifters.all.push($scope.currentLifter);
+
+            // Also add the lifter to the gender specific list
+            if ($scope.currentLifter.gender === 'male') {
+                $scope.meet.lifters.male.push($scope.currentLifter);
+            } else {
+                $scope.meet.lifters.female.push($scope.currentLifter);
+            }
+
             $scope.currentLifter = {};
         };
 
@@ -74,21 +127,41 @@
         };
 
         $scope.removeLifter = function(lifter) {
-            $scope.meet.lifters.splice($scope.meet.lifters.indexOf(lifter), 1);
+            $scope.meet.lifters.all.splice($scope.meet.lifters.indexOf(lifter), 1);
+
+            if (lifter.gender === 'male') {
+                $scope.meet.lifters.male.splice($scope.meet.lifters.male.indexOf(lifter), 1);
+            } else {
+                $scope.meet.lifters.female.splice($scope.meet.lifters.female.indexOf(lifter), 1);
+            }
         };
 
-        $scope.createFlights = function() {
+        $scope.createFlights = function(lifters) {
             var numFlights,
                 flightSize = 12,
-                numLifters = $scope.meet.lifters.length;
+                numLifters = lifters.length,
+                flights = [],
+                i = 0;
 
             // sort our lifter array by weight class
-            $scope.meet.lifters.sort($scope.compareLiftersByWeight);
+            lifters.sort($scope.compareLiftersByWeight);
+
+            // calculate number of flights
+            numFlights = Math.ceil(numLifters / flightSize);
 
             // split the array into flights (max 12 per flight)
+            while (i < numLifters) {
+                var size = Math.ceil((numLifters - i) / numFlights--);
+                flights.push(lifters.slice(i, i + size));
+                i += size;
+            }
 
             // order the flights by opening squats
+            flights.forEach(function(flight) {
+                flight.sort($scope.compareLiftersByOpener);
+            });
 
+            return flights;
         };
 
         $scope.compareLiftersByWeight = function(lifterOne, lifterTwo) {
@@ -101,7 +174,7 @@
             return 0;
         };
 
-        $scope.compareFlightsByOpener = function(lifterOne, lifterTwo) {
+        $scope.compareLiftersByOpener = function(lifterOne, lifterTwo) {
             if (lifterOne.squat < lifterTwo.squat) {
                 return -1;
             }
@@ -112,14 +185,15 @@
         };
 
         $scope.createMeet = function() {
-            if ($scope.meet.lifters.length > 0) {
-                $scope.createFlights();
+            if ($scope.meet.lifters.all.length > 0) {
+                $scope.meet.flights.male = $scope.createFlights($scope.meet.lifters.male);
+                $scope.meet.flights.female = $scope.createFlights($scope.meet.lifters.female);
+
                 $scope.currentStage = PARTIALS_PATH + 'meet.html';
             } else {
                 // TODO: better notification
                 window.alert('You cant create a meet with no lifters!');
             }
         };
-
     }]);
 })();

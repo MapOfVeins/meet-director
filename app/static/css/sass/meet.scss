@@ -1,7 +1,7 @@
 @mixin meet-nav-bar($width) {
     width: $width;
     display: inline-block;
-    padding: 10px 10px;
+    padding-right: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
     border: 1px solid $concrete-gray;
@@ -18,10 +18,44 @@
 
 .meet-flight-nav {
     @include meet-nav-bar(70%);
+    border: none;
+    padding: 0;
+    margin-right: 22px;
+
+    .meet-flight-select {
+        width: 58%;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
 }
 
 .meet-lift-nav {
-    @include meet-nav-bar(25%);
+    @include meet-nav-bar(20%);
+    border: none;
+    padding: 0;
+    margin-left: 35px;
+
+    .meet-lift-tab {
+        display: inline-block;
+        border: 1px solid $concrete-gray;
+        border-radius: 4px 4px 0px 0px;
+        padding: 8px 10px 8px 10px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $clouds-white;
+        }
+    }
+
+    #squat-tab {
+        margin-right: -4px;
+        border-right: 0;
+    }
+
+    #bench-tab {
+        margin-right: -4px;
+        border-right: 0;
+    }
 }
 
 .meet-left-panel {
@@ -30,22 +64,72 @@
     float: left;
     .meet-bar-display {
         @include panel-component(48%, 175px);
-    }
-
-    .meet-lifter-info {
-        @include panel-component(42%, 175px);
+        float: left;
     }
 
     .meet-current-lift {
+        @include panel-component(42%, 175px);
+    }
+
+    .meet-lifter-info {
         @include panel-component(21%, 125px);
+        float: left;
+
+        .meet-name {
+            font-size: 24px;
+            overflow: ellipsis;
+            margin-bottom: 15px;
+        }
+
+        .meet-gender {
+            font-size: 21px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .meet-age-cat {
+            font-size: 21px;
+            display: inline-block;
+        }
+
+        .meet-weight-class {
+            font-size: 21px;
+            display: inline-block;
+        }
     }
 
     .meet-timer {
         @include panel-component(47%, 125px);
+
+        .lift-timer-value {
+            font-size: 90px;
+            float: left;
+            display: inline-block;
+            width: 70%;
+        }
+
+        .timer-buttons {
+            display: inline-block;
+            width: 28%;
+        }
+
+        .timer-btn {
+            width: 100%;
+            margin-bottom: 5px;
+        }
     }
 
     .meet-lift-result {
-        @include panel-component(19%, 125px);
+        @include panel-component(21%, 125px);
+        border: none;
+        padding: 0px 5px 10px 5px;
+        margin-right: 32px;
+        float: right;
+
+        .meet-result-btn {
+            width: 100%;
+            height: 59%;
+        }
     }
 }
 
@@ -60,9 +144,17 @@
 
 .meet-event-nav {
     @include meet-nav-bar(70%);
+    border: none;
+    padding: 0;
+    margin-right: 22px;
+
 }
 
 .meet-nav {
     @include meet-nav-bar(25%);
+}
+
+.nav-btn-float-right {
+    float: right;
 }
 

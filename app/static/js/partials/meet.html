@@ -1,17 +1,74 @@
-<div class="meet-flight-nav">Flight nav top</div>
-<div class="meet-lift-nav">Lift nav top</div>
+<section ng-controller="RunMeetCtrl">
+    <div class="meet-flight-nav">
+        <button class="red-btn" ng-click="goToPrevFlight()">
+            < Previous Flight
+        </button>
+        <select class="meet-flight-select">
+        <option>1</option>
+        <option>2</option>
+        </select>
+        <button class="red-btn" ng-click="goToNextFlight()">
+            Next Flight >
+        </button>
+    </div>
+    <div class="meet-lift-nav">
+        <div class="meet-lift-tab" id="squat-tab" ng-click="switchTab('squat')">Squat</div>
+        <div class="meet-lift-tab" id="bench-tab" ng-click="switchTab('bench')">Bench</div>
+        <div class="meet-lift-tab" id="deadlift-tab" ng-click="switchTab('deadlift')">Deadlift</div>
+    </div>
 
-<div class="meet-left-panel">
-    <div class="meet-bar-display">Bar plate Display</div>
-    <div class="meet-lifter-info">Lifter info</div>
+    <div class="meet-left-panel">
+        <div class="meet-bar-display">Bar plate Display</div>
+        <div class="meet-current-lift">
+            <div>Current lift</div>
+            <div> KG</div>
+            <div> Lbs</div>
+        </div>
 
-    <div class="meet-current-lift">Current lift</div>
-    <div class="meet-timer">Timer</div>
-    <div class="meet-lift-result">Result</div>
-</div>
-<div class="meet-right-panel">
-    <div class="meet-result-summary">results summary</div>
-</div>
+        <div class="meet-lifter-info">
+            <div class="meet-name"><strong>{{lifting.name}}</strong></div>
+            <div class="meet-gender">{{lifting.gender}} - </div>
+            <div class="meet-age-cat">Age cat</div>
+            <div class="meet-weight-class">{{lifting.weightClass}}</div>
+            <div class="meet-weight-class">Class in lbs</div>
+        </div>
+        <div class="meet-timer">
+            <meet-timer>
+                <div class="lift-timer-value"></div>
+                <div class="timer-buttons">
+                    <button class="red-btn timer-btn" ng-click="pauseTime()">
+                        Pause
+                    </button>
+                    <button class="red-btn timer-btn" ng-click="resumeTime()">
+                        Resume
+                    </button>
+                    <button class="red-btn timer-btn" ng-click="resetTime()">
+                        Reset
+                    </button>
+                </div>
+            </meet-timer>
+        </div>
+        <div class="meet-lift-result">
+            <button class="red-btn meet-result-btn" ng-click="noLift()">
+                No Lift
+            </button>
+            <button class="green-btn meet-result-btn" ng-click="goodLift()">
+                Good Lift
+            </button>
+        </div>
+    </div>
+    <div class="meet-right-panel">
+        <div class="meet-result-summary">results summary</div>
+    </div>
 
-<div class="meet-event-nav">bottom event nav</div>
-<div class="meet-nav">bottom meet nav</div>
+    <div class="meet-event-nav">
+        <button class="red-btn" ng-click="goToPrevLift()">
+            < Previous Lift
+        </button>
+        <button class="red-btn nav-btn-float-right" ng-click="goToNextLift()">
+            Next Lift >
+        </button>
+
+    </div>
+    <div class="meet-nav">bottom meet nav</div>
+</section>
