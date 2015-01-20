@@ -2,8 +2,8 @@
     background-color: $color;
     //border-radius: 4px;
     border: none;
-    min-height: 36px;
     color: white;
+    min-height: 36px;
     font-size: 16px;
     font-weight: 600;
     padding: 8px 20px;
@@ -24,4 +24,36 @@
 
 .red-btn {
     @include primary-btn($alizarin-red);
+}
+
+.grey-btn {
+    @include primary-btn($clouds-white);
+    color: black;
+    border: 1px solid black;
+    text-shadow: none;
+    font-weight: 500;
+}
+
+.turq-btn {
+    @include primary-btn($sea-turq);
+}
+
+.blue-btn {
+    @include primary-btn($midnight-blue);
+}
+
+.white-btn {
+    @include primary-btn(white);
+    color: black;
+    border: 1px solid black;
+    text-shadow: none;
+    transition: all 50ms ease-in;
+
+    &:hover {
+        cursor: pointer;
+        color: white;
+        background-color: black;
+        transition: all 50ms ease-in;
+    }
+
 }

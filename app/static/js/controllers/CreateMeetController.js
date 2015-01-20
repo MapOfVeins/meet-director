@@ -12,34 +12,13 @@
             startDate: '',
             lifters: {
                 // TODO test data
-                all: [
-                    {
-                        name: 'test lifter',
-                        age: 28,
-                        gender: 'male',
-                        weightClass: '120kg',
-                        weightNum: 121,
-                        squat: 212.5,
-                        bench: 147.5,
-                        deadlift: 220
-                    }
-                ],
-                male: [
-                {
-                    name: 'test lifter',
-                    age: 28,
-                    gender: 'male',
-                    weightClass: '120kg',
-                    weightNum: 121,
-                    squat: 212.5,
-                    bench: 147.5,
-                    deadlift: 220
-                }
-                ],
+                all: [],
+                male: [],
                 female: []
             },
-            flights: {
-                male: [                {
+            flights: [{
+                name: 'flight1',
+                lifters: [{
                     name: 'test lifter',
                     age: 28,
                     gender: 'male',
@@ -47,10 +26,40 @@
                     weightNum: 121,
                     squat: 212.5,
                     bench: 147.5,
-                    deadlift: 220
-                }],
-                female: []
-            }
+                    deadlift: 220,
+                    attempts: {
+                        squat: [100],
+                        bench: [75],
+                        deadlift: [120]
+                    },
+                    results: {
+                        squat: [null, null, null],
+                        bench: [null, null, null],
+                        deadlift: [null, null, null]
+                    }
+                },
+                {
+                    name: 'test lifter2',
+                    age: 28,
+                    gender: 'male',
+                    weightClass: '90kg',
+                    weightNum: 90,
+                    squat: 212.5,
+                    bench: 147.5,
+                    deadlift: 220,
+                    attempts: {
+                        squat: [120],
+                        bench: [50],
+                        deadlift: [175]
+                    },
+                    results: {
+                        squat: [1, 1, 1],
+                        bench: [1, 1, 1],
+                        deadlift: [1, 1, 1]
+                    }
+
+                }]
+            }]
         };
 
         $scope.currentLifter = {};

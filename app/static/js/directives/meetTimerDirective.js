@@ -52,6 +52,10 @@
                     }
                 };
 
+                scope.$watch('lifting', function() {
+                    scope.resetTime();
+                });
+
                 setTime();
                 timerInterval = $interval(changeTime, 1000);
             }

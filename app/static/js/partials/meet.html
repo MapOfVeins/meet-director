@@ -1,28 +1,74 @@
 <section ng-controller="RunMeetCtrl">
     <div class="meet-flight-nav">
-        <button class="red-btn" ng-click="goToPrevFlight()">
-            < Previous Flight
-        </button>
-        <select class="meet-flight-select">
-        <option>1</option>
-        <option>2</option>
+        <label class="meet-flight-label"><strong>Flight</strong></label>
+        <select
+            class="meet-flight-select"
+            ng-model="currentFlight"
+            ng-options="flight.name for flight in meet.flights">
         </select>
-        <button class="red-btn" ng-click="goToNextFlight()">
-            Next Flight >
-        </button>
+
+        <label class="meet-lifter-label"><strong>Lifter</strong></label>
+        <select
+            class="meet-lifter-select"
+            ng-model="lifting"
+            ng-change="setCurrentLift()"
+            ng-options="lifter.name for lifter in currentFlight.lifters">
+        </select>
     </div>
     <div class="meet-lift-nav">
-        <div class="meet-lift-tab" id="squat-tab" ng-click="switchTab('squat')">Squat</div>
-        <div class="meet-lift-tab" id="bench-tab" ng-click="switchTab('bench')">Bench</div>
-        <div class="meet-lift-tab" id="deadlift-tab" ng-click="switchTab('deadlift')">Deadlift</div>
+        <div
+            class="meet-lift-tab"
+            id="squat-tab"
+            ng-class="{selected: currentTab=='squat'}"
+            ng-click="switchTab('squat')"
+        >Squat</div>
+        <div
+            class="meet-lift-tab"
+            id="bench-tab"
+            ng-class="{selected: currentTab == 'bench'}"
+            ng-click="switchTab('bench')"
+        >Bench</div>
+        <div
+            class="meet-lift-tab"
+            id="deadlift-tab"
+            ng-class="{selected: currentTab == 'deadlift'}"
+            ng-click="switchTab('deadlift')"
+        >Deadlift</div>
+        <div
+            class="meet-lift-tab"
+            id="total-tab"
+            ng-class="{selected: currentTab == 'total'}"
+            ng-click="switchTab('total')"
+        >Total</div>
     </div>
 
     <div class="meet-left-panel">
         <div class="meet-bar-display">Bar plate Display</div>
         <div class="meet-current-lift">
-            <div>Current lift</div>
-            <div> KG</div>
-            <div> Lbs</div>
+            <div class="meet-lift-round">
+                <strong>{{currentLift.name}}</strong> - {{liftRound + 1}}
+            </div>
+            <div class="round-button-wrapper">
+                <button
+                    class="grey-btn"
+                    id="next-round-btn"
+                    ng-click="nextRound()"
+                    title="Next {{currentTab}} round">
+                    &#x25B2
+                </button>
+                <button
+                    class="grey-btn"
+                    ng-click="prevRound()"
+                    title="Previous {{currentTab}} round">
+                    &#x25BC
+                </button>
+            </div>
+            <div class="meet-lift-amount">
+                <strong>{{currentLift.liftInKg}}</strong> kg
+            </div>
+            <div class="meet-lift-amount">
+                <strong>{{currentLift.liftInLb}}</strong> lbs
+            </div>
         </div>
 
         <div class="meet-lifter-info">
@@ -36,13 +82,13 @@
             <meet-timer>
                 <div class="lift-timer-value"></div>
                 <div class="timer-buttons">
-                    <button class="red-btn timer-btn" ng-click="pauseTime()">
+                    <button class="grey-btn timer-btn" ng-click="pauseTime()">
                         Pause
                     </button>
-                    <button class="red-btn timer-btn" ng-click="resumeTime()">
+                    <button class="grey-btn timer-btn" ng-click="resumeTime()">
                         Resume
                     </button>
-                    <button class="red-btn timer-btn" ng-click="resetTime()">
+                    <button class="grey-btn timer-btn" ng-click="resetTime()">
                         Reset
                     </button>
                 </div>
@@ -58,15 +104,47 @@
         </div>
     </div>
     <div class="meet-right-panel">
-        <div class="meet-result-summary">results summary</div>
+        <div class="meet-result-summary">
+            <div class="top-result-header lifter-header"><strong>Lifter</strong></div>
+            <div class="top-result-header attempt-header"><strong>1</strong></div>
+            <div class="top-result-header attempt-header"><strong>2</strong></div>
+            <div class="top-result-header attempt-header"><strong>3</strong></div>
+            <hr />
+            <div ng-repeat="lifter in currentFlight.lifters">
+                <div class="lifter-list-name">{{lifter.name}}</div>
+                <div class="lifter-attempt-result">
+                    <input
+                        type="text"
+                        class="lifter-attempt-input"
+                        value="{{ lifter.attempts[currentTab][0] }}"
+                        ng-model="lifter.attempts[currentTab][0]"
+                    >
+                </div>
+                <div class="lifter-attempt-result">
+                    <input
+                        type="text"
+                        class="lifter-attempt-input"
+                        ng-model="lifter.attempts[currentTab][1]"
+                    >
+                </div>
+                <div class="lifter-attempt-result">
+                    <input
+                        type="text"
+                        class="lifter-attempt-input"
+                        ng-model="lifter.attempts[currentTab][2]"
+                    >
+                </div>
+                <hr />
+            </div>
+        </div>
     </div>
 
     <div class="meet-event-nav">
-        <button class="red-btn" ng-click="goToPrevLift()">
-            < Previous Lift
+        <button class="white-btn" ng-click="goToPrevLifter()">
+            < Previous Lifter
         </button>
-        <button class="red-btn nav-btn-float-right" ng-click="goToNextLift()">
-            Next Lift >
+        <button class="white-btn nav-btn-float-right" ng-click="goToNextLifter()">
+            Next Lifter >
         </button>
 
     </div>
