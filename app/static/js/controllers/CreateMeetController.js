@@ -1,92 +1,41 @@
 (function () {
     'use strict';
     var APP = angular.module('MeetDirector.controllers'),
-        PARTIALS_PATH = '/static/js/partials/';
+        PARTIALS_PATH = '/static/js/partials/',
+        MAX_ROUNDS = 3;
 
-    APP.controller('CreateMeetCtrl', ['$scope', function($scope) {
+    APP.controller('CreateMeetCtrl', [
+        '$scope',
+        'meetService',
+    function (
+        $scope,
+        meetService
+    ) {
 
-        $scope.meet = {
-            title: '',
-            fed: '',
-            director: '',
-            startDate: '',
-            lifters: {
-                // TODO test data
-                all: [],
-                male: [],
-                female: []
-            },
-            flights: [{
-                name: 'flight1',
-                lifters: [{
-                    name: 'test lifter',
-                    age: 28,
-                    gender: 'male',
-                    weightClass: '120kg',
-                    weightNum: 121,
-                    squat: 212.5,
-                    bench: 147.5,
-                    deadlift: 220,
-                    attempts: {
-                        squat: [100],
-                        bench: [75],
-                        deadlift: [120]
-                    },
-                    results: {
-                        squat: [null, null, null],
-                        bench: [null, null, null],
-                        deadlift: [null, null, null]
-                    }
-                },
-                {
-                    name: 'test lifter2',
-                    age: 28,
-                    gender: 'male',
-                    weightClass: '90kg',
-                    weightNum: 90,
-                    squat: 212.5,
-                    bench: 147.5,
-                    deadlift: 220,
-                    attempts: {
-                        squat: [120],
-                        bench: [50],
-                        deadlift: [175]
-                    },
-                    results: {
-                        squat: [1, 1, 1],
-                        bench: [1, 1, 1],
-                        deadlift: [1, 1, 1]
-                    }
-
-                }]
-            }]
-        };
-
-        $scope.currentLifter = {};
-        $scope.weightClasses = [];
-        $scope.femaleWeightClasses = [
-            '43kg',
-            '47kg',
-            '52kg',
-            '57kg',
-            '63kg',
-            '72kg',
-            '84kg',
-            '84kg+'
-        ];
-        $scope.maleWeightClasses = [
-            '53kg',
-            '59kg',
-            '66kg',
-            '74kg',
-            '83kg',
-            '93kg',
-            '105kg',
-            '120kg',
-            '120kg+'
-        ];
+        $scope.meetState = meetService;
+        $scope.lifters = $scope.meetState.lifters;
+        $scope.flights = $scope.meetState.flights;
+        $scope.weightClassObj = $scope.meetState.weightClasses;
 
         $scope.currentStage = PARTIALS_PATH + 'meet.html';
+        $scope.weightClasses = [];
+
+        $scope.currentLifter = {
+            attempts: {
+                squat: [],
+                bench: [],
+                deadlift: []
+            },
+            rackHeights: {
+                squat: 0,
+                bench: 0
+            },
+            results: {
+                squat: [],
+                bench: [],
+                deadlift: []
+            }
+        };
 
         $scope.setCurrentStage = function(stage) {
             $scope.currentStage = stage;
@@ -106,28 +55,49 @@
             }
 
             // convert openers to ints as well, for sorting purposes
-            $scope.currentLifter.squat = parseInt($scope.currentLifter.squat, 10);
-            $scope.currentLifter.bench = parseInt($scope.currentLifter.bench, 10);
-            $scope.currentLifter.deadlift = parseInt($scope.currentLifter.deadlift, 10);
+            $scope.currentLifter.attempts.squat[0] = parseInt($scope.currentLifter.attempts.squat[0], 10);
+            $scope.currentLifter.attempts.bench[0] = parseInt($scope.currentLifter.attempts.bench[0], 10);
+            $scope.currentLifter.attempts.deadlift[0] = parseInt($scope.currentLifter.attempts.deadlift[0], 10);
+
+            for (var i = 0; i < MAX_ROUNDS; i++) {
+                $scope.currentLifter.results.squat[i] = null;
+                $scope.currentLifter.results.bench[i] = null;
+                $scope.currentLifter.results.deadlift[i] = null;
+            };
 
             $scope.currentLifter.weight = weightNum;
-            $scope.meet.lifters.all.push($scope.currentLifter);
+            $scope.lifters.all.push($scope.currentLifter);
 
             // Also add the lifter to the gender specific list
             if ($scope.currentLifter.gender === 'male') {
-                $scope.meet.lifters.male.push($scope.currentLifter);
+                $scope.lifters.male.push($scope.currentLifter);
             } else {
-                $scope.meet.lifters.female.push($scope.currentLifter);
+                $scope.lifters.female.push($scope.currentLifter);
             }
 
-            $scope.currentLifter = {};
+            $scope.currentLifter = {
+                attempts: {
+                    squat: [],
+                    bench: [],
+                    deadlift: []
+                },
+                rackHeights: {
+                    squat: 0,
+                    bench: 0
+                },
+                results: {
+                    squat: [],
+                    bench: [],
+                    deadlift: []
+                }
+            };
         };
 
         $scope.switchWeightClasses = function () {
             if ($scope.currentLifter.gender === 'male') {
-                $scope.weightClasses = $scope.maleWeightClasses;
+                $scope.weightClasses = $scope.weightClassObj.male.classic;
             } else {
-                $scope.weightClasses = $scope.femaleWeightClasses;
+                $scope.weightClasses = $scope.weightClassObj.female.classic;
             }
         };
 
@@ -136,12 +106,12 @@
         };
 
         $scope.removeLifter = function(lifter) {
-            $scope.meet.lifters.all.splice($scope.meet.lifters.indexOf(lifter), 1);
+            $scope.lifters.all.splice($scope.lifters.all.indexOf(lifter), 1);
 
             if (lifter.gender === 'male') {
-                $scope.meet.lifters.male.splice($scope.meet.lifters.male.indexOf(lifter), 1);
+                $scope.lifters.male.splice($scope.lifters.male.indexOf(lifter), 1);
             } else {
-                $scope.meet.lifters.female.splice($scope.meet.lifters.female.indexOf(lifter), 1);
+                $scope.lifters.female.splice($scope.lifters.female.indexOf(lifter), 1);
             }
         };
 
@@ -194,9 +164,9 @@
         };
 
         $scope.createMeet = function() {
-            if ($scope.meet.lifters.all.length > 0) {
-                $scope.meet.flights.male = $scope.createFlights($scope.meet.lifters.male);
-                $scope.meet.flights.female = $scope.createFlights($scope.meet.lifters.female);
+            if ($scope.lifters.all.length > 0) {
+                $scope.flights.male = $scope.createFlights($scope.lifters.male);
+                $scope.flights.female = $scope.createFlights($scope.lifters.female);
 
                 $scope.currentStage = PARTIALS_PATH + 'meet.html';
             } else {

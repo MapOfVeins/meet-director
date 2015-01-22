@@ -4,7 +4,7 @@
         <select
             class="meet-flight-select"
             ng-model="currentFlight"
-            ng-options="flight.name for flight in meet.flights">
+            ng-options="flight.name for flight in flights">
         </select>
 
         <label class="meet-lifter-label"><strong>Lifter</strong></label>
@@ -95,12 +95,19 @@
             </meet-timer>
         </div>
         <div class="meet-lift-result">
-            <button class="red-btn meet-result-btn" ng-click="noLift()">
-                No Lift
-            </button>
-            <button class="green-btn meet-result-btn" ng-click="goodLift()">
-                Good Lift
-            </button>
+            <div ng-show="!currentLift.completed">
+                <button class="red-btn meet-result-btn" ng-click="recordLift(false)">
+                    No Lift
+                </button>
+                <button class="green-btn meet-result-btn" ng-click="recordLift(true)">
+                    Good Lift
+                </button>
+            </div>
+            <div ng-show="currentLift.completed">
+                <button class="red-btn meet-result-btn" ng-click="undoLift()">
+                    Undo Lift
+                </button>
+            </div>
         </div>
     </div>
     <div class="meet-right-panel">
@@ -117,6 +124,8 @@
                         type="text"
                         class="lifter-attempt-input"
                         value="{{ lifter.attempts[currentTab][0] }}"
+                        ng-disabled="lifter.results[currentTab][0] !== null"
+                        ng-class="{passed: lifter.results[currentTab][0] === true, failed: lifter.results[currentTab][0] === false}"
                         ng-model="lifter.attempts[currentTab][0]"
                     >
                 </div>
@@ -124,6 +133,8 @@
                     <input
                         type="text"
                         class="lifter-attempt-input"
+                        ng-disabled="lifter.results[currentTab][1] !== null"
+                        ng-class="{passed: lifter.results[currentTab][1] === true, failed: lifter.results[currentTab][1] === false}"
                         ng-model="lifter.attempts[currentTab][1]"
                     >
                 </div>
@@ -131,6 +142,8 @@
                     <input
                         type="text"
                         class="lifter-attempt-input"
+                        ng-disabled="lifter.results[currentTab][2] !== null"
+                        ng-class="{passed: lifter.results[currentTab][2] === true, failed: lifter.results[currentTab][2] === false}"
                         ng-model="lifter.attempts[currentTab][2]"
                     >
                 </div>

@@ -13,18 +13,18 @@
                     director;
 
                 title = angular.element(titleEl);
-                title.val(scope.meet.title);
+                title.val(scope.meetService.meetInfo.title);
 
                 fed = angular.element(fedEl);
-                fed.val(scope.meet.fed);
+                fed.val(scope.meetService.meetInfo.fed);
 
                 director = angular.element(dirEl);
-                director.val(scope.meet.director);
+                director.val(scope.meetService.meetInfo.director);
 
                 scope.initMeet = function () {
-                    scope.meet.title = title.val();
-                    scope.meet.fed = fed.val();
-                    scope.meet.director = director.val();
+                    scope.meetState.meetInfo.title = title.val();
+                    scope.meetState.meetInfo.fed = fed.val();
+                    scope.meetState.meetInfo.director = director.val();
                     scope.setCurrentStage('/static/js/partials/initLifters.html');
                 };
             }

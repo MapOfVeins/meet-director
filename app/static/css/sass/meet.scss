@@ -209,6 +209,16 @@
             display: inline-block;
             width: 40px;
             text-align: center;
+
+            .passed {
+                background: $nephritis-green;
+                color: white;
+            }
+
+            .failed {
+                background: $alizarin-red;
+                color: white;
+            }
         }
 
         .lifter-attempt-input {

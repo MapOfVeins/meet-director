@@ -549,6 +549,12 @@ select {
       display: inline-block;
       width: 40px;
       text-align: center; }
+      .meet-right-panel .meet-result-summary .lifter-attempt-result .passed {
+        background: #27ae60;
+        color: white; }
+      .meet-right-panel .meet-result-summary .lifter-attempt-result .failed {
+        background: #e74c3c;
+        color: white; }
     .meet-right-panel .meet-result-summary .lifter-attempt-input {
       width: 45px;
       padding: 5px 5px;

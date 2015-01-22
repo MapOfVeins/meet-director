@@ -53,17 +53,32 @@
 
         <div class="create-input-wrapper">
             <label class="create-input-label-short">Squat:</label>
-            <input type="text" class="create-input-field-lifts" ng-model="currentLifter.squat">
-            <input type="text" class="create-input-field-lifts" ng-model="currentLifter.squatRack">
+            <input
+                type="text"
+                class="create-input-field-lifts"
+                ng-model="currentLifter.attempts.squat[0]">
+            <input
+                type="text"
+                class="create-input-field-lifts"
+                ng-model="currentLifter.rackHeights.squat">
         </div>
         <div class="create-input-wrapper">
             <label class="create-input-label-short">Bench:</label>
-            <input type="text" class="create-input-field-lifts" ng-model="currentLifter.bench">
-            <input type="text" class="create-input-field-lifts" ng-model="currentLifter.benchRack">
+            <input
+                type="text"
+                class="create-input-field-lifts"
+                ng-model="currentLifter.attempts.bench[0]">
+            <input
+                type="text"
+                class="create-input-field-lifts"
+                ng-model="currentLifter.rackHeights.bench">
         </div>
         <div class="create-input-wrapper">
             <label class="create-input-label-short">Deadlift:</label>
-            <input type="text" class="create-input-field-lifts" ng-model="currentLifter.deadlift">
+            <input
+                type="text"
+                class="create-input-field-lifts"
+                ng-model="currentLifter.attempts.deadlift[0]">
         </div>
     </div>
     <button
@@ -75,7 +90,7 @@
 </section>
 <section class="lifter-list">
     <div class="lifter-list-title">Lifter List</div>
-    <div ng-repeat="lifter in meet.lifters.all" class="animate-add-remove-lifter">
+    <div ng-repeat="lifter in lifters.all" class="animate-add-remove-lifter">
         <div class="lifter-list-details">
             <button
                 class="green-btn lifter-delete-btn"
@@ -85,9 +100,9 @@
             <strong>{{lifter.name}}</strong>
             {{lifter.weightClass}}
             <span class="lifter-list-openers">
-                Squat: {{lifter.squat}}kg
-                Bench: {{lifter.bench}}kg
-                Deadlift: {{lifter.deadlift}}kg
+                Squat: {{lifter.attempts.squat[0]}}kg
+                Bench: {{lifter.attempts.bench[0]}}kg
+                Deadlift: {{lifter.attempts.deadlift[0]}}kg
             </span>
         </div>
         <hr />
