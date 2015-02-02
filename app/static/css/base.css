@@ -439,7 +439,7 @@ select {
   float: left; }
   .meet-left-panel .meet-bar-display {
     width: 48%;
-    height: 175px;
+    height: 225px;
     display: inline-block;
     padding: 10px 10px;
     margin-bottom: 15px;
@@ -447,7 +447,7 @@ select {
     border: 1px solid black; }
   .meet-left-panel .meet-current-lift {
     width: 42%;
-    height: 175px;
+    height: 225px;
     display: inline-block;
     padding: 10px 10px;
     margin-bottom: 15px;
@@ -458,16 +458,19 @@ select {
       width: 20%;
       float: right; }
     .meet-left-panel .meet-current-lift #next-round-btn {
+      margin-top: 5px;
       margin-bottom: 5px; }
     .meet-left-panel .meet-current-lift .meet-lift-round {
       display: inline-block;
-      font-size: 51px;
+      font-size: 45px;
       width: 80%; }
+      .meet-left-panel .meet-current-lift .meet-lift-round strong {
+        font-size: 51px; }
     .meet-left-panel .meet-current-lift .meet-lift-amount {
       font-size: 42px; }
   .meet-left-panel .meet-lifter-info {
-    width: 21%;
-    height: 125px;
+    width: 27%;
+    height: 200px;
     display: inline-block;
     padding: 10px 10px;
     margin-bottom: 15px;
@@ -488,8 +491,8 @@ select {
       font-size: 21px;
       display: inline-block; }
   .meet-left-panel .meet-timer {
-    width: 47%;
-    height: 125px;
+    width: 41%;
+    height: 200px;
     display: inline-block;
     padding: 10px 10px;
     margin-bottom: 15px;
@@ -509,7 +512,7 @@ select {
       margin-bottom: 5px; }
   .meet-left-panel .meet-lift-result {
     width: 21%;
-    height: 125px;
+    height: 190px;
     display: inline-block;
     padding: 10px 10px;
     margin-bottom: 15px;
@@ -525,8 +528,8 @@ select {
   width: 25%;
   display: inline-block; }
   .meet-right-panel .meet-result-summary {
-    width: 100%;
-    height: 353px;
+    width: 130%;
+    height: 480px;
     display: inline-block;
     padding: 10px 10px;
     margin-bottom: 15px;
@@ -537,18 +540,19 @@ select {
     .meet-right-panel .meet-result-summary .top-result-header {
       display: inline-block; }
     .meet-right-panel .meet-result-summary .lifter-header {
-      width: 140px; }
+      width: 180px; }
     .meet-right-panel .meet-result-summary .attempt-header {
-      width: 40px;
+      width: 55px;
       text-align: center; }
     .meet-right-panel .meet-result-summary .lifter-list-name {
       display: inline-block;
-      width: 140px;
+      width: 180px;
       text-overflow: ellipsis; }
     .meet-right-panel .meet-result-summary .lifter-attempt-result {
       display: inline-block;
-      width: 40px;
-      text-align: center; }
+      width: 55px;
+      text-align: center;
+      font-size: 14pt; }
       .meet-right-panel .meet-result-summary .lifter-attempt-result .passed {
         background: #27ae60;
         color: white; }
@@ -556,9 +560,10 @@ select {
         background: #e74c3c;
         color: white; }
     .meet-right-panel .meet-result-summary .lifter-attempt-input {
-      width: 45px;
+      width: 55px;
       padding: 5px 5px;
-      text-align: center; }
+      text-align: center;
+      font-size: 14pt; }
 
 .meet-event-nav {
   width: 778px;
@@ -578,6 +583,100 @@ select {
 
 .nav-btn-float-right {
   float: right; }
+
+.plate-display {
+  display: inline-block;
+  width: 100%; }
+
+._25kg-plate {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: linear-gradient(135deg, red, red 75%, black);
+  width: 7.5%;
+  height: 100%;
+  margin-right: 5px; }
+
+._20kg-plate {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: linear-gradient(135deg, blue, blue 75%, black);
+  width: 7.5%;
+  height: 90%;
+  margin-right: 5px;
+  margin-bottom: 13px; }
+
+._15kg-plate {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: linear-gradient(135deg, yellow, yellow 75%, black);
+  width: 7.5%;
+  height: 80%;
+  margin-right: 5px;
+  margin-bottom: 24px; }
+
+._10kg-plate {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: linear-gradient(135deg, black, black 75%, black);
+  width: 5%;
+  height: 60%;
+  margin-right: 5px;
+  margin-bottom: 46px; }
+
+._5kg-plate {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: linear-gradient(135deg, white, white 75%, black);
+  width: 5%;
+  height: 40%;
+  margin-right: 5px;
+  margin-bottom: 74px; }
+
+._2-5kg-plate {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: linear-gradient(135deg, black, black 75%, black);
+  width: 5%;
+  height: 20%;
+  margin-right: 5px;
+  margin-bottom: 94px; }
+
+._1kg-plate {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: linear-gradient(135deg, white, white 75%, black);
+  width: 5%;
+  height: 17%;
+  margin-right: 5px;
+  margin-bottom: 102px; }
+
+._0-5kg-plate {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: linear-gradient(135deg, grey, grey 75%, black);
+  width: 5%;
+  height: 15%;
+  margin-right: 5px;
+  margin-bottom: 104px; }
+
+.collar {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: linear-gradient(135deg, grey, grey 75%, black);
+  width: 5%;
+  height: 15%;
+  margin-right: 5px;
+  background: grey;
+  margin-bottom: 101px; }
 
 html, body {
   margin: 0;

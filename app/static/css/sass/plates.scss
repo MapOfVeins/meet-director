@@ -1,0 +1,59 @@
+@mixin plate-display($color, $height, $width:7.5%) {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: linear-gradient(135deg, $color, $color 75%, black);
+    width: $width;
+    height: $height;
+    margin-right: 5px;
+}
+
+.plate-display {
+    display: inline-block;
+    width: 100%;
+}
+
+._25kg-plate {
+    @include plate-display(red, 100%);
+}
+
+._20kg-plate {
+    @include plate-display(blue, 90%);
+    margin-bottom: 13px;
+}
+
+._15kg-plate {
+    @include plate-display(yellow, 80%);
+    margin-bottom: 24px;
+}
+
+._10kg-plate {
+    @include plate-display(black, 60%, 5%);
+    margin-bottom: 46px;
+}
+
+._5kg-plate {
+    @include plate-display(white, 40%, 5%);
+    margin-bottom: 74px;
+}
+
+._2-5kg-plate {
+    @include plate-display(black, 20%, 5%);
+    margin-bottom: 94px;
+}
+
+._1kg-plate {
+    @include plate-display(white, 17%, 5%);
+    margin-bottom: 102px;
+}
+
+._0-5kg-plate {
+    @include plate-display(grey, 15%, 5%);
+    margin-bottom: 104px;
+}
+
+.collar {
+    @include plate-display(grey, 15%, 5%);
+    background: grey;
+    margin-bottom: 101px;
+}

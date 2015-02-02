@@ -75,7 +75,7 @@
                 weightClass: '120kg',
                 weightNum: 121,
                 attempts: {
-                    squat: [100],
+                    squat: [160],
                     bench: [75],
                     deadlift: [120]
                 },

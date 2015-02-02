@@ -57,7 +57,6 @@
                 });
 
                 setTime();
-                timerInterval = $interval(changeTime, 1000);
             }
         }
     }]);

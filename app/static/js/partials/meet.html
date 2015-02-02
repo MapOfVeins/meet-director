@@ -43,24 +43,33 @@
     </div>
 
     <div class="meet-left-panel">
-        <div class="meet-bar-display">Bar plate Display</div>
+        <div class="meet-bar-display">
+            <div ng-include="'/static/js/partials/plateDisplay.html'"></div>
+        </div>
         <div class="meet-current-lift">
             <div class="meet-lift-round">
-                <strong>{{currentLift.name}}</strong> - {{liftRound + 1}}
+                <strong>{{currentLift.name}} - {{liftRound + 1}} </strong>
+                {{lifting.name}}
             </div>
             <div class="round-button-wrapper">
                 <button
                     class="grey-btn"
-                    id="next-round-btn"
-                    ng-click="nextRound()"
+                    ng-click="gotoRound(1)"
                     title="Next {{currentTab}} round">
-                    &#x25B2
+                    1
                 </button>
                 <button
                     class="grey-btn"
-                    ng-click="prevRound()"
+                    id="next-round-btn"
+                    ng-click="gotoRound(2)"
                     title="Previous {{currentTab}} round">
-                    &#x25BC
+                    2
+                </button>
+                <button
+                    class="grey-btn"
+                    ng-click="gotoRound(3)"
+                    title="Previous {{currentTab}} round">
+                    3
                 </button>
             </div>
             <div class="meet-lift-amount">
@@ -82,11 +91,11 @@
             <meet-timer>
                 <div class="lift-timer-value"></div>
                 <div class="timer-buttons">
+                    <button class="grey-btn timer-btn" ng-click="resumeTime()">
+                        Start
+                    </button>
                     <button class="grey-btn timer-btn" ng-click="pauseTime()">
                         Pause
-                    </button>
-                    <button class="grey-btn timer-btn" ng-click="resumeTime()">
-                        Resume
                     </button>
                     <button class="grey-btn timer-btn" ng-click="resetTime()">
                         Reset
