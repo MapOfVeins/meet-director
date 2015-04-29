@@ -25,6 +25,7 @@
                     scope.meetState.meetInfo.title = title.val();
                     scope.meetState.meetInfo.fed = fed.val();
                     scope.meetState.meetInfo.director = director.val();
+                    console.log('init');
                     scope.setCurrentStage('/static/js/partials/initLifters.html');
                 };
             }

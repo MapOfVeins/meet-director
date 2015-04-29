@@ -8,63 +8,7 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     </head>
     <body ng-controller="MeetDirectorCtrl">
-        <div class="wrapper">
-            <header class="header">
-                <div class="header-wrapper">
-                    <h1 class="header-logo">
-                        <a href="/">MeetDirector.io</a>
-                    </h1>
-<!--                     <div class="header-search">
-                        <input
-                            type="text"
-                            class="header-input"
-                            id="header-meet-search"
-                            placeholder="Search meets">
-                        <button class="green-btn">Search</button>
-                        <button class="green-btn">Create</button>
-                    </div> -->
-                </div>
-            </header>
-            <div class="index-body">
-                <div class="index-easy-host">
-                    <h2>Thinking of running a powerlifting meet?</h2>
-                    <h3>Host with just a click</h3>
-                        <button
-                            class="clear-btn"
-                            id="index-create-btn"
-                            ng-click="clickCreate()"
-                        >
-                            {{buttonText}}
-                        </button>
-                    <div ng-show="showMeetForm" ng-include="'static/js/angular/partials/initMeet.html'"></div>
-                    <p>Find out why</p>
-                </div>
-
-                <div class="index-easy-search">
-                    <h2>See past meet results</h2>
-                    <h3>All meets hosted at MeetDirector are saved and publicly viewable</h3>
-                    <input
-                        type="text"
-                        id="index-main-search">
-                        <button class="green-btn" id="index-main-search-btn">Go</button>
-                </div>
-
- <!--                <div class="index-easy-to-use">
-                    <h2>Why use MeetDirector?</h2>
-                </div> -->
-            </div>
-            <div class="push"></div>
-        </div>
-        <footer class="footer">
-            <div class="header-wrapper">
-                <div class="footer-links">
-                    <a href="/about">About</a>
-                    <a href="/contact">Contact</a>
-                    <a href="/blog">Blog</a>
-<!--                     <a href="">Developers</a> -->
-                </div>
-            </div>
-        </footer>
+        <section id="index-body" ng-include="currentStage"></section>
 
         <!-- AngularJS -->
         <script src="static/lib/js/angular.min.js"></script>
