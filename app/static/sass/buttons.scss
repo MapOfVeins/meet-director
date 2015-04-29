@@ -18,6 +18,30 @@
     }
 }
 
+@mixin clear-button($color:$sea-turq) {
+    background-color: $color;
+    border: white solid 2px;
+    color: white;
+    min-height: 36px;
+    font-size: 16px;
+    // font-weight: 600;
+    padding: 8px 20px;
+    // text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    transition: all .2s ease-in-out;
+    font-family: 'Raleway', sans-serif;
+
+    &:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        transition: all .2s ease-in;
+    }
+}
+
+.clear-btn {
+    @include clear-button($sea-turq);
+}
+
 .green-btn {
     @include primary-btn($nephritis-green);
 }

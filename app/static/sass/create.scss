@@ -38,6 +38,12 @@
     }
 }
 
+.meet-create-form {
+    width: 24%;
+    margin: auto;
+    background-color: white;
+}
+
 .create-wrapper {
     max-width: 1100px;
     min-height: 500px;
@@ -46,11 +52,14 @@
 }
 
 .create-input-wrapper {
-    margin-bottom: 15px;
+    width: 69%;
+    margin-bottom: 8px;
+    padding-top: 15px;
 }
 
 .create-input-label {
-    @include input-label(15%);
+    color: black;
+    @include input-label(47%);
 }
 
 .create-input-field {
@@ -58,8 +67,8 @@
 }
 
 .create-form-btn {
-    margin-left: 170px;
-    margin-top: 50px;
+    margin: 14px 0px 15px 20px;
+    width: 34%;
 }
 
 .lifter-list {

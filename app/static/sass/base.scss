@@ -6,12 +6,13 @@ $clouds-white: #ecf0f1;
 $nephritis-green: #27ae60;
 $alizarin-red: #e74c3c;
 
-
+// Global Imports
 @import 'body';
 @import 'forms';
 @import 'buttons';
 @import 'animations';
 
+// Meet direction imports
 @import 'header-footer';
 @import 'index';
 @import 'create';

@@ -43,6 +43,21 @@ select {
   select:active {
     border: 1px solid black; }
 
+.clear-btn {
+  background-color: #16a085;
+  border: white solid 2px;
+  color: white;
+  min-height: 36px;
+  font-size: 16px;
+  padding: 8px 20px;
+  transition: all .2s ease-in-out;
+  font-family: 'Raleway', sans-serif; }
+  .clear-btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transition: all .2s ease-in; }
+
 .green-btn {
   background-color: #27ae60;
   border: none;
@@ -275,6 +290,11 @@ select {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #dddddd), color-stop(0.5, white));
     background-image: -moz-linear-gradient(center top, #dddddd 50%, white 50%); }
 
+.meet-create-form {
+  width: 24%;
+  margin: auto;
+  background-color: white; }
+
 .create-wrapper {
   max-width: 1100px;
   min-height: 500px;
@@ -282,11 +302,14 @@ select {
   padding: 0 2%; }
 
 .create-input-wrapper {
-  margin-bottom: 15px; }
+  width: 69%;
+  margin-bottom: 8px;
+  padding-top: 15px; }
 
 .create-input-label {
+  color: black;
   display: inline-block;
-  width: 15%;
+  width: 47%;
   text-align: right; }
 
 .create-input-field {
@@ -295,8 +318,8 @@ select {
   margin-left: 8px; }
 
 .create-form-btn {
-  margin-left: 170px;
-  margin-top: 50px; }
+  margin: 14px 0px 15px 20px;
+  width: 34%; }
 
 .lifter-list {
   background-color: #ecf0f1;

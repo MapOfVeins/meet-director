@@ -14,7 +14,7 @@
                     <h1 class="header-logo">
                         <a href="/">MeetDirector.io</a>
                     </h1>
-                    <div class="header-search">
+<!--                     <div class="header-search">
                         <input
                             type="text"
                             class="header-input"
@@ -22,19 +22,21 @@
                             placeholder="Search meets">
                         <button class="green-btn">Search</button>
                         <button class="green-btn">Create</button>
-                    </div>
+                    </div> -->
                 </div>
             </header>
             <div class="index-body">
                 <div class="index-easy-host">
                     <h2>Thinking of running a powerlifting meet?</h2>
                     <h3>Host with just a click</h3>
-                    <form action="/create">
                         <button
-                        type="submit"
-                        class="red-btn"
-                        id="index-create-btn"> Create a new meet</button>
-                    </form>
+                            class="clear-btn"
+                            id="index-create-btn"
+                            ng-click="clickCreate()"
+                        >
+                            {{buttonText}}
+                        </button>
+                    <div ng-show="showMeetForm" ng-include="'static/js/angular/partials/initMeet.html'"></div>
                     <p>Find out why</p>
                 </div>
 
@@ -47,9 +49,9 @@
                         <button class="green-btn" id="index-main-search-btn">Go</button>
                 </div>
 
-                <div class="index-easy-to-use">
+ <!--                <div class="index-easy-to-use">
                     <h2>Why use MeetDirector?</h2>
-                </div>
+                </div> -->
             </div>
             <div class="push"></div>
         </div>
@@ -59,15 +61,15 @@
                     <a href="/about">About</a>
                     <a href="/contact">Contact</a>
                     <a href="/blog">Blog</a>
-                    <a href="">Developers</a>
+<!--                     <a href="">Developers</a> -->
                 </div>
             </div>
         </footer>
 
         <!-- AngularJS -->
-        <script src="static/js/vendor/angular.min.js"></script>
-        <script src="static/js/vendor/angular-animate.min.js"></script>
-        <script src="static/js/app.js"></script>
-        <script src="static/js/controllers/MeetDirectorController.js"></script>
+        <script src="static/lib/js/angular.min.js"></script>
+        <script src="static/lib/js/angular-animate.min.js"></script>
+        <script src="static/js/angular/app.js"></script>
+        <script src="static/js/angular/controllers/MeetDirectorController.js"></script>
     </body>
 </html>

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     var APP = angular.module('MeetDirector.controllers'),
-        PARTIALS_PATH = '/static/js/partials/',
+        PARTIALS_PATH = '/static/js/angular/partials/',
         MAX_ROUNDS = 3,
         LBS_CONVERSION = 2.2046,
         BAR_WEIGHT = 20,

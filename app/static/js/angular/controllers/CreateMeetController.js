@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     var APP = angular.module('MeetDirector.controllers'),
-        PARTIALS_PATH = '/static/js/partials/',
+        PARTIALS_PATH = '/static/js/angular/partials/',
         MAX_ROUNDS = 3;
 
     APP.controller('CreateMeetCtrl', [
@@ -17,7 +17,7 @@
         $scope.flights = $scope.meetState.flights;
         $scope.weightClassObj = $scope.meetState.weightClasses;
 
-        $scope.currentStage = PARTIALS_PATH + 'meet.html';
+        $scope.currentStage = PARTIALS_PATH + 'initMeet.html';
         $scope.weightClasses = [];
 
         $scope.currentLifter = {
