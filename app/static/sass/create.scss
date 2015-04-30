@@ -38,6 +38,10 @@
     }
 }
 
+.control-buttons {
+    margin-bottom: 20px;
+}
+
 .meet-create-form {
     width: 24%;
     margin: auto;
@@ -52,18 +56,17 @@
 }
 
 .create-input-wrapper {
-    width: 69%;
     margin-bottom: 8px;
     padding-top: 15px;
+    text-align: left;
 }
 
 .create-input-label {
     color: black;
-    @include input-label(47%);
+    padding-right: 10px;
 }
 
 .create-input-field {
-    @include input-field(25%);
 }
 
 .create-form-btn {
@@ -71,12 +74,16 @@
     width: 34%;
 }
 
+.lifter-form {
+    width: 500px;
+    float: left;
+    margin: 0px 0px 0px 240px;
+}
+
 .lifter-list {
     background-color: $clouds-white;
-    display: inline-block;
-    float: right;
     width: 600px;
-    height: 431px;
+    height: 522px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -110,20 +117,15 @@
     font-weight: 600;
 }
 
-.lifter-form {
-    display: inline-block;
-    width: 500px;
-    height: 447px;
-    float: left;
-}
 
 .upload-form-btn {
-    margin-bottom: 30px;
+    margin-right: 15px;
 }
 
 .add-lifter-btn {
-    margin-left: 94px;
     margin-top: 10px;
+    width: 100%;
+    height: 55px;
 }
 
 .lifter-list-title {
@@ -147,8 +149,8 @@
 }
 
 .create-meet-btn {
-    float: right;
-    width: 175px;
+    // float: right;
+    // width: 175px;
 }
 
 .init-meet-wrapper {
@@ -165,4 +167,5 @@
 
 #lifter-name {
     min-width: 60%;
+    margin-left: 8px;
 }

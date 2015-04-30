@@ -5,10 +5,11 @@
       BUTTON_DEFAULT = "Create a new meet",
       BUTTON_OPEN = "Some Info...";
 
-    APP.controller('MeetDirectorCtrl', ['$scope', function($scope) {
+    APP.controller('MeetDirectorCtrl', ['$scope', 'meetService', function($scope, meetService) {
       $scope.showMeetForm = false;
       $scope.buttonText = BUTTON_DEFAULT;
       $scope.currentStage = PARTIALS_PATH + 'home.html';
+      $scope.meetService = meetService;
 
       $scope.clickCreate = function() {
         $scope.showMeetForm = !$scope.showMeetForm;
@@ -19,10 +20,8 @@
         }
       };
 
-      $scope.initMeet = function() {
-        console.log('init');
-        $scope.currentStage = PARTIALS_PATH + 'initLifters.html';
-
+      $scope.setCurrentStage = function(stage) {
+        $scope.currentStage = stage;
       };
     }]);
 })();

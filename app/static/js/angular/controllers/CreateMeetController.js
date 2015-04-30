@@ -17,7 +17,6 @@
         $scope.flights = $scope.meetState.flights;
         $scope.weightClassObj = $scope.meetState.weightClasses;
 
-        $scope.currentStage = PARTIALS_PATH + 'initMeet.html';
         $scope.weightClasses = [];
 
         $scope.currentLifter = {
@@ -35,10 +34,6 @@
                 bench: [],
                 deadlift: []
             }
-        };
-
-        $scope.setCurrentStage = function(stage) {
-            $scope.currentStage = stage;
         };
 
         $scope.addNewLifter = function() {
@@ -99,10 +94,6 @@
             } else {
                 $scope.weightClasses = $scope.weightClassObj.female.classic;
             }
-        };
-
-        $scope.returnToInit = function() {
-            $scope.currentStage = PARTIALS_PATH + 'initMeet.html';
         };
 
         $scope.removeLifter = function(lifter) {

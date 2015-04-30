@@ -22,11 +22,10 @@
                 director.val(scope.meetService.meetInfo.director);
 
                 scope.initMeet = function () {
-                    scope.meetState.meetInfo.title = title.val();
-                    scope.meetState.meetInfo.fed = fed.val();
-                    scope.meetState.meetInfo.director = director.val();
-                    console.log('init');
-                    scope.setCurrentStage('/static/js/partials/initLifters.html');
+                    scope.meetService.meetInfo.title = title.val();
+                    scope.meetService.meetInfo.fed = fed.val();
+                    scope.meetService.meetInfo.director = director.val();
+                    scope.setCurrentStage('/static/js/angular/partials/initLifters.html');
                 };
             }
         }
