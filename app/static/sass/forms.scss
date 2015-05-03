@@ -11,6 +11,7 @@ input[type=text] {
 
     &:focus {
         border: 1px solid black;
+        outline: 0;
     }
 }
 
@@ -25,5 +26,6 @@ select {
 
     &:active {
         border: 1px solid black;
+        outline: 0;
     }
 }

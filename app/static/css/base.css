@@ -1,22 +1,22 @@
 /**
  * Sub module for body styling.
  */
-.index-body, .create-body {
+.index-body {
   text-align: center;
   margin: 0;
   padding: 61px 0 0;
   border: 0; }
-  .index-body h2, .create-body h2 {
+  .index-body h2 {
     font-weight: 100;
     font-size: 32px;
     padding: 10px;
     margin: 0; }
-  .index-body h3, .create-body h3 {
+  .index-body h3 {
     font-weight: 100;
     font-size: 24px;
     padding: 45px;
     margin: 0; }
-  .index-body p, .create-body p {
+  .index-body p {
     font-size: 14px;
     padding: 30px;
     margin: 0; }
@@ -31,7 +31,8 @@ input[type=text] {
   padding: 7px 10px;
   box-shadow: inset 2px 2px 5px -1px rgba(0, 0, 0, 0.6); }
   input[type=text]:focus {
-    border: 1px solid black; }
+    border: 1px solid black;
+    outline: 0; }
 
 select {
   background-color: white;
@@ -41,10 +42,11 @@ select {
   padding: 7px 10px;
   box-shadow: inset 2px 2px 5px -1px rgba(0, 0, 0, 0.6); }
   select:active {
-    border: 1px solid black; }
+    border: 1px solid black;
+    outline: 0; }
 
 .clear-btn {
-  background-color: #16a085;
+  background-color: transparent;
   border: white solid 2px;
   color: white;
   min-height: 36px;
@@ -257,12 +259,11 @@ select {
  */
 .index-easy-host {
   padding-top: 50px;
-  background-color: #16a085;
+  background: url("/static/images/squat_hero.jpg") no-repeat 74% 43% fixed;
   color: white; }
 
 .index-easy-search {
-  padding-top: 50px;
-  background-color: #ecf0f1; }
+  padding-top: 50px; }
 
 .index-easy-to-use {
   padding-top: 50px; }
@@ -286,18 +287,6 @@ select {
   border-radius: 0px 4px 4px 0px;
   border: 1px solid black; }
 
-.create-body {
-  text-align: left; }
-  .create-body h2 {
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 30px; }
-  .create-body hr {
-    height: 2px;
-    border: none;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #dddddd), color-stop(0.5, white));
-    background-image: -moz-linear-gradient(center top, #dddddd 50%, white 50%); }
-
 .control-buttons {
   margin-bottom: 20px; }
 
@@ -317,27 +306,25 @@ select {
   padding-top: 15px;
   text-align: left; }
 
-.create-input-label {
-  color: black;
-  padding-right: 10px; }
-
 .create-form-btn {
-  margin: 14px 0px 15px 20px;
-  width: 34%; }
+  margin: 14px 0px 15px 32px;
+  width: 32%; }
 
 .lifter-form {
   width: 500px;
   float: left;
-  margin: 0px 0px 0px 240px; }
+  margin: 0px 0px 0px 440px;
+  background-color: white; }
 
 .lifter-list {
   background-color: #ecf0f1;
   width: 600px;
-  height: 431px;
+  height: 522px;
   overflow-x: hidden;
   overflow-y: auto; }
 
 .create-input-field-short {
+  color: black;
   display: inline-block;
   min-width: 19%;
   margin-left: 8px; }
@@ -355,8 +342,15 @@ select {
   width: 192px; }
 
 .create-input-label-short {
+  color: black;
   display: inline-block;
   width: 15%;
+  text-align: right; }
+
+.create-input-label-short-init {
+  color: black;
+  display: inline-block;
+  width: 34%;
   text-align: right; }
 
 .create-input-label-lifts {

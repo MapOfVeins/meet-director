@@ -42,7 +42,7 @@
 }
 
 .clear-btn {
-    @include clear-button($sea-turq);
+    @include clear-button(transparent);
 }
 
 .green-btn {

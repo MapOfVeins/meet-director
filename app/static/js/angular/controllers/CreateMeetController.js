@@ -159,7 +159,9 @@
                 $scope.flights.male = $scope.createFlights($scope.lifters.male);
                 $scope.flights.female = $scope.createFlights($scope.lifters.female);
 
-                $scope.currentStage = PARTIALS_PATH + 'meet.html';
+                console.log($scope.flights);
+
+                $scope.setCurrentStage(PARTIALS_PATH + 'meet.html');
             } else {
                 // TODO: better notification
                 window.alert('You cant create a meet with no lifters!');

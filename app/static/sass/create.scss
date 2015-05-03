@@ -10,34 +10,6 @@
     text-align: right;
 }
 
-.create-body {
-    @extend %main-body;
-    text-align: left;
-
-    h2 {
-        text-align: center;
-        padding-top: 40px;
-        padding-bottom: 30px;
-    }
-
-    hr {
-        height: 2px;
-        border: none;
-        background-image: -webkit-gradient(
-            linear,
-            left top,
-            left bottom,
-            color-stop(0.5, rgb(221,221,221)),
-            color-stop(0.5, rgb(255,255,255))
-        );
-        background-image: -moz-linear-gradient(
-            center top,
-            rgb(221,221,221) 50%,
-            rgb(255,255,255) 50%
-        );
-    }
-}
-
 .control-buttons {
     margin-bottom: 20px;
 }
@@ -61,23 +33,16 @@
     text-align: left;
 }
 
-.create-input-label {
-    color: black;
-    padding-right: 10px;
-}
-
-.create-input-field {
-}
-
 .create-form-btn {
-    margin: 14px 0px 15px 20px;
-    width: 34%;
+    margin: 14px 0px 15px 32px;
+    width: 32%;
 }
 
 .lifter-form {
     width: 500px;
     float: left;
-    margin: 0px 0px 0px 240px;
+    margin: 0px 0px 0px 440px;
+    background-color: white;
 }
 
 .lifter-list {
@@ -89,6 +54,7 @@
 }
 
 .create-input-field-short {
+    color: black;
     @include input-field(19%);
 }
 
@@ -103,7 +69,13 @@
 }
 
 .create-input-label-short {
+    color: black;
     @include input-label(15%);
+}
+
+.create-input-label-short-init {
+    color: black;
+    @include input-label(34%);
 }
 
 .create-input-label-lifts {
@@ -116,7 +88,6 @@
     margin-bottom: 10px;
     font-weight: 600;
 }
-
 
 .upload-form-btn {
     margin-right: 15px;

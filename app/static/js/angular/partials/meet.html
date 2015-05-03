@@ -1,174 +1,195 @@
-<section ng-controller="RunMeetCtrl">
-    <div class="meet-flight-nav">
-        <label class="meet-flight-label"><strong>Flight</strong></label>
-        <select
-            class="meet-flight-select"
-            ng-model="currentFlight"
-            ng-options="flight.name for flight in flights">
-        </select>
-
-        <label class="meet-lifter-label"><strong>Lifter</strong></label>
-        <select
-            class="meet-lifter-select"
-            ng-model="lifting"
-            ng-change="setCurrentLift()"
-            ng-options="lifter.name for lifter in currentFlight.lifters">
-        </select>
-    </div>
-    <div class="meet-lift-nav">
-        <div
-            class="meet-lift-tab"
-            id="squat-tab"
-            ng-class="{selected: currentTab=='squat'}"
-            ng-click="switchTab('squat')"
-        >Squat</div>
-        <div
-            class="meet-lift-tab"
-            id="bench-tab"
-            ng-class="{selected: currentTab == 'bench'}"
-            ng-click="switchTab('bench')"
-        >Bench</div>
-        <div
-            class="meet-lift-tab"
-            id="deadlift-tab"
-            ng-class="{selected: currentTab == 'deadlift'}"
-            ng-click="switchTab('deadlift')"
-        >Deadlift</div>
-        <div
-            class="meet-lift-tab"
-            id="total-tab"
-            ng-class="{selected: currentTab == 'total'}"
-            ng-click="switchTab('total')"
-        >Total</div>
-    </div>
-
-    <div class="meet-left-panel">
-        <div class="meet-bar-display">
-            <div ng-include="'/static/js/angular/partials/plateDisplay.html'"></div>
-        </div>
-        <div class="meet-current-lift">
-            <div class="meet-lift-round">
-                <strong>{{currentLift.name}} - {{liftRound + 1}} </strong>
-                {{lifting.name}}
-            </div>
-            <div class="round-button-wrapper">
-                <button
-                    class="grey-btn"
-                    ng-click="gotoRound(1)"
-                    title="Next {{currentTab}} round">
-                    1
-                </button>
-                <button
-                    class="grey-btn"
-                    id="next-round-btn"
-                    ng-click="gotoRound(2)"
-                    title="Previous {{currentTab}} round">
-                    2
-                </button>
-                <button
-                    class="grey-btn"
-                    ng-click="gotoRound(3)"
-                    title="Previous {{currentTab}} round">
-                    3
-                </button>
-            </div>
-            <div class="meet-lift-amount">
-                <strong>{{currentLift.liftInKg}}</strong> kg
-            </div>
-            <div class="meet-lift-amount">
-                <strong>{{currentLift.liftInLb}}</strong> lbs
-            </div>
-        </div>
-
-        <div class="meet-lifter-info">
-            <div class="meet-name"><strong>{{lifting.name}}</strong></div>
-            <div class="meet-gender">{{lifting.gender}} - </div>
-            <div class="meet-age-cat">Age cat</div>
-            <div class="meet-weight-class">{{lifting.weightClass}}</div>
-            <div class="meet-weight-class">Class in lbs</div>
-        </div>
-        <div class="meet-timer">
-            <meet-timer>
-                <div class="lift-timer-value"></div>
-                <div class="timer-buttons">
-                    <button class="grey-btn timer-btn" ng-click="resumeTime()">
-                        Start
-                    </button>
-                    <button class="grey-btn timer-btn" ng-click="pauseTime()">
-                        Pause
-                    </button>
-                    <button class="grey-btn timer-btn" ng-click="resetTime()">
-                        Reset
-                    </button>
+<div class="wrapper">
+    <header class="header">
+        <div class="header-wrapper">
+            <h1 class="header-logo">
+                <a href="/">MeetDirector.io</a>
+            </h1>
+            <div class="header-meet-info">
+                <div>
+                    <strong>Title:</strong> {{meetService.meetInfo.title}}
+                    <strong>Fed:</strong> {{meetService.meetInfo.fed}}
                 </div>
-            </meet-timer>
-        </div>
-        <div class="meet-lift-result">
-            <div ng-show="!currentLift.completed">
-                <button class="red-btn meet-result-btn" ng-click="recordLift(false)">
-                    No Lift
-                </button>
-                <button class="green-btn meet-result-btn" ng-click="recordLift(true)">
-                    Good Lift
-                </button>
-            </div>
-            <div ng-show="currentLift.completed">
-                <button class="red-btn meet-result-btn" ng-click="undoLift()">
-                    Undo Lift
-                </button>
+                <div>
+                    <strong>Director:</strong> {{meetService.meetInfo.director}}
+                    <strong>Start Date:</strong>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="meet-right-panel">
-        <div class="meet-result-summary">
-            <div class="top-result-header lifter-header"><strong>Lifter</strong></div>
-            <div class="top-result-header attempt-header"><strong>1</strong></div>
-            <div class="top-result-header attempt-header"><strong>2</strong></div>
-            <div class="top-result-header attempt-header"><strong>3</strong></div>
-            <hr />
-            <div ng-repeat="lifter in currentFlight.lifters">
-                <div class="lifter-list-name">{{lifter.name}}</div>
-                <div class="lifter-attempt-result">
-                    <input
-                        type="text"
-                        class="lifter-attempt-input"
-                        value="{{ lifter.attempts[currentTab][0] }}"
-                        ng-disabled="lifter.results[currentTab][0] !== null"
-                        ng-class="{passed: lifter.results[currentTab][0] === true, failed: lifter.results[currentTab][0] === false}"
-                        ng-model="lifter.attempts[currentTab][0]"
-                    >
-                </div>
-                <div class="lifter-attempt-result">
-                    <input
-                        type="text"
-                        class="lifter-attempt-input"
-                        ng-disabled="lifter.results[currentTab][1] !== null"
-                        ng-class="{passed: lifter.results[currentTab][1] === true, failed: lifter.results[currentTab][1] === false}"
-                        ng-model="lifter.attempts[currentTab][1]"
-                    >
-                </div>
-                <div class="lifter-attempt-result">
-                    <input
-                        type="text"
-                        class="lifter-attempt-input"
-                        ng-disabled="lifter.results[currentTab][2] !== null"
-                        ng-class="{passed: lifter.results[currentTab][2] === true, failed: lifter.results[currentTab][2] === false}"
-                        ng-model="lifter.attempts[currentTab][2]"
-                    >
-                </div>
-                <hr />
-            </div>
-        </div>
-    </div>
+    </header>
+    <div class="index-body">
+        <section ng-controller="RunMeetCtrl">
+            <div class="meet-flight-nav">
+                <label class="meet-flight-label"><strong>Flight</strong></label>
+                <select
+                    class="meet-flight-select"
+                    ng-model="currentFlight"
+                    ng-options="flight.name for flight in flights">
+                </select>
 
-    <div class="meet-event-nav">
-        <button class="white-btn" ng-click="goToPrevLifter()">
-            < Previous Lifter
-        </button>
-        <button class="white-btn nav-btn-float-right" ng-click="goToNextLifter()">
-            Next Lifter >
-        </button>
+                <label class="meet-lifter-label"><strong>Lifter</strong></label>
+                <select
+                    class="meet-lifter-select"
+                    ng-model="lifting"
+                    ng-change="setCurrentLift()"
+                    ng-options="lifter.name for lifter in currentFlight.lifters">
+                </select>
+            </div>
+            <div class="meet-lift-nav">
+                <div
+                    class="meet-lift-tab"
+                    id="squat-tab"
+                    ng-class="{selected: currentTab=='squat'}"
+                    ng-click="switchTab('squat')"
+                >Squat</div>
+                <div
+                    class="meet-lift-tab"
+                    id="bench-tab"
+                    ng-class="{selected: currentTab == 'bench'}"
+                    ng-click="switchTab('bench')"
+                >Bench</div>
+                <div
+                    class="meet-lift-tab"
+                    id="deadlift-tab"
+                    ng-class="{selected: currentTab == 'deadlift'}"
+                    ng-click="switchTab('deadlift')"
+                >Deadlift</div>
+                <div
+                    class="meet-lift-tab"
+                    id="total-tab"
+                    ng-class="{selected: currentTab == 'total'}"
+                    ng-click="switchTab('total')"
+                >Total</div>
+            </div>
 
+            <div class="meet-left-panel">
+                <div class="meet-bar-display">
+                    <div ng-include="'/static/js/angular/partials/plateDisplay.html'"></div>
+                </div>
+                <div class="meet-current-lift">
+                    <div class="meet-lift-round">
+                        <strong>{{currentLift.name}} - {{liftRound + 1}} </strong>
+                        {{lifting.name}}
+                    </div>
+                    <div class="round-button-wrapper">
+                        <button
+                            class="grey-btn"
+                            ng-click="gotoRound(1)"
+                            title="Next {{currentTab}} round">
+                            1
+                        </button>
+                        <button
+                            class="grey-btn"
+                            id="next-round-btn"
+                            ng-click="gotoRound(2)"
+                            title="Previous {{currentTab}} round">
+                            2
+                        </button>
+                        <button
+                            class="grey-btn"
+                            ng-click="gotoRound(3)"
+                            title="Previous {{currentTab}} round">
+                            3
+                        </button>
+                    </div>
+                    <div class="meet-lift-amount">
+                        <strong>{{currentLift.liftInKg}}</strong> kg
+                    </div>
+                    <div class="meet-lift-amount">
+                        <strong>{{currentLift.liftInLb}}</strong> lbs
+                    </div>
+                </div>
+
+                <div class="meet-lifter-info">
+                    <div class="meet-name"><strong>{{lifting.name}}</strong></div>
+                    <div class="meet-gender">{{lifting.gender}} - </div>
+                    <div class="meet-age-cat">Age cat</div>
+                    <div class="meet-weight-class">{{lifting.weightClass}}</div>
+                    <div class="meet-weight-class">Class in lbs</div>
+                </div>
+                <div class="meet-timer">
+                    <meet-timer>
+                        <div class="lift-timer-value"></div>
+                        <div class="timer-buttons">
+                            <button class="grey-btn timer-btn" ng-click="resumeTime()">
+                                Start
+                            </button>
+                            <button class="grey-btn timer-btn" ng-click="pauseTime()">
+                                Pause
+                            </button>
+                            <button class="grey-btn timer-btn" ng-click="resetTime()">
+                                Reset
+                            </button>
+                        </div>
+                    </meet-timer>
+                </div>
+                <div class="meet-lift-result">
+                    <div ng-show="!currentLift.completed">
+                        <button class="red-btn meet-result-btn" ng-click="recordLift(false)">
+                            No Lift
+                        </button>
+                        <button class="green-btn meet-result-btn" ng-click="recordLift(true)">
+                            Good Lift
+                        </button>
+                    </div>
+                    <div ng-show="currentLift.completed">
+                        <button class="red-btn meet-result-btn" ng-click="undoLift()">
+                            Undo Lift
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="meet-right-panel">
+                <div class="meet-result-summary">
+                    <div class="top-result-header lifter-header"><strong>Lifter</strong></div>
+                    <div class="top-result-header attempt-header"><strong>1</strong></div>
+                    <div class="top-result-header attempt-header"><strong>2</strong></div>
+                    <div class="top-result-header attempt-header"><strong>3</strong></div>
+                    <hr />
+                    <div ng-repeat="lifter in currentFlight.lifters">
+                        <div class="lifter-list-name">{{lifter.name}}</div>
+                        <div class="lifter-attempt-result">
+                            <input
+                                type="text"
+                                class="lifter-attempt-input"
+                                value="{{ lifter.attempts[currentTab][0] }}"
+                                ng-disabled="lifter.results[currentTab][0] !== null"
+                                ng-class="{passed: lifter.results[currentTab][0] === true, failed: lifter.results[currentTab][0] === false}"
+                                ng-model="lifter.attempts[currentTab][0]"
+                            >
+                        </div>
+                        <div class="lifter-attempt-result">
+                            <input
+                                type="text"
+                                class="lifter-attempt-input"
+                                ng-disabled="lifter.results[currentTab][1] !== null"
+                                ng-class="{passed: lifter.results[currentTab][1] === true, failed: lifter.results[currentTab][1] === false}"
+                                ng-model="lifter.attempts[currentTab][1]"
+                            >
+                        </div>
+                        <div class="lifter-attempt-result">
+                            <input
+                                type="text"
+                                class="lifter-attempt-input"
+                                ng-disabled="lifter.results[currentTab][2] !== null"
+                                ng-class="{passed: lifter.results[currentTab][2] === true, failed: lifter.results[currentTab][2] === false}"
+                                ng-model="lifter.attempts[currentTab][2]"
+                            >
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+
+            <div class="meet-event-nav">
+                <button class="white-btn" ng-click="goToPrevLifter()">
+                    < Previous Lifter
+                </button>
+                <button class="white-btn nav-btn-float-right" ng-click="goToNextLifter()">
+                    Next Lifter >
+                </button>
+
+            </div>
+            <div class="meet-nav">bottom meet nav</div>
+        </section>
     </div>
-    <div class="meet-nav">bottom meet nav</div>
-</section>
+</div>
