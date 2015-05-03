@@ -7,6 +7,7 @@
 
     APP.controller('MeetDirectorCtrl', ['$scope', 'meetService', function($scope, meetService) {
       $scope.showMeetForm = false;
+      $scope.inMeetCreation = false;
       $scope.buttonText = BUTTON_DEFAULT;
       $scope.currentStage = PARTIALS_PATH + 'home.html';
       $scope.meetService = meetService;
@@ -22,6 +23,11 @@
 
       $scope.setCurrentStage = function(stage) {
         $scope.currentStage = stage;
+        $scope.inMeetCreation = !($scope.currentStage === PARTIALS_PATH + '/home.html');
       };
+
+      // $scope.inMeetCreation = function() {
+      //   return !($scope.currentStage === PARTIALS_PATH + '/home.html');
+      // }
     }]);
 })();
