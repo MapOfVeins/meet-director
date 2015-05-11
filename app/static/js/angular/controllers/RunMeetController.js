@@ -10,9 +10,11 @@
     APP.controller('RunMeetCtrl', [
         '$scope',
         'meetService',
+        'weightService',
     function (
         $scope,
-        meetService
+        meetService,
+        weightService
     ) {
         $scope.meetState = meetService;
         $scope.flights = $scope.meetState.flights;
@@ -66,7 +68,7 @@
         $scope.setLiftDisplay = function () {
             var collar,
                 plate,
-                workingWeight = ($scope.currentLift.liftInKg - BAR_WEIGHT - COLLAR_WEIGHT) / 2;
+                workingWeight = weightService.getWorkingWeight($scope.currentLift.liftInKg);
 
             plate = $scope.calculatePlateNumber(25, workingWeight);
             workingWeight = plate.remaining;
