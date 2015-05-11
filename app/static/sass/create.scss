@@ -43,6 +43,7 @@
     float: left;
     margin: 0px 0px 0px 440px;
     background-color: white;
+    color: black;
 }
 
 .lifter-list {
@@ -51,6 +52,7 @@
     height: 522px;
     overflow-x: hidden;
     overflow-y: auto;
+    color: black;
 }
 
 .create-input-field-short {
@@ -95,6 +97,7 @@
 
 .add-lifter-btn {
     margin-top: 10px;
+    margin-bottom: -16px;
     width: 100%;
     height: 55px;
 }
@@ -117,11 +120,6 @@
     padding-left: 10px;
     height: 24px;
     font-size: 14px;
-}
-
-.create-meet-btn {
-    // float: right;
-    // width: 175px;
 }
 
 .init-meet-wrapper {

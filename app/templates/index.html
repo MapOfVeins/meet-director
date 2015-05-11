@@ -9,7 +9,41 @@
     </head>
     <body ng-controller="MeetDirectorCtrl">
 
-        <section id="index-body" ng-include="currentStage"></section>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-wrapper">
+                <h1 class="header-logo">
+                    <a href="/">MeetDirector.io</a>
+                </h1>
+                <div class="header-stuff">
+                    <div class="header-meet-info" ng-show="currentStage !== '/static/js/angular/partials/home.html'">
+                        <div class="header-meet-info">
+                            <strong>Title:</strong> {{meetService.meetInfo.title}}
+                        </div>
+                        <div class="header-meet-info">
+                            <strong>Fed:</strong> {{meetService.meetInfo.fed}}
+                        </div>
+                        <div class="header-meet-info">
+                            <strong>Director:</strong> {{meetService.meetInfo.director}}
+                        </div>
+                        <div class="header-meet-info">
+                            <strong>Start Date:</strong>
+                        </div>
+                    </div>
+
+                    <div class="header-search" ng-show="currentStage === '/static/js/angular/partials/home.html'">
+                        <input
+                            type="text"
+                            class="header-input"
+                            id="header-meet-search"
+                            placeholder="Search meets">
+                        <button class="green-btn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="index-body" ng-include="currentStage"></section>
 
         <!-- AngularJS -->
         <script src="static/lib/js/angular.min.js"></script>

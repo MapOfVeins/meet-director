@@ -7,28 +7,23 @@
  *
  * [$height The height in px of the bookend.
  */
-@mixin bookend($height:60px) {
-    background: $midnight-blue;
-    border-bottom: 1px solid $concrete-gray;
+@mixin bookend($height:60px, $color: $midnight-blue) {
+    background: $color;
+    // border-bottom: 1px solid $concrete-gray;
     height: $height;
     width: 100%;
 }
 
 .header {
-    @include bookend(60px);
+    @include bookend(60px, transparent);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
 }
 
-.footer {
-    @include bookend(80px);
-    clear: both;
-}
-
 .header-wrapper {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 4%;
 
@@ -51,27 +46,20 @@
     }
 }
 
-.header-search {
+.header-stuff {
     float: right;
+}
+
+.header-search {
+    display: inline-block;
     color: white;
     line-height: 55px;
 }
 
 .header-meet-info {
-    float: right;
-    color: white;
-    line-height: 29px;
-    font-size: 16px;
-}
-
-.footer-links {
-    float: right;
+    display: inline-block;
     color: white;
     line-height: 55px;
-
-    a {
-        margin-left: 5px;
-    }
 }
 
 #header-meet-search {

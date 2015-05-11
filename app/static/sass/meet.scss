@@ -19,10 +19,14 @@
     border-right: 0;
 }
 
+#run-meet {
+    margin: 0px 200px;
+}
+
 .meet-flight-nav {
-    @include meet-nav-bar(781px);
-    padding: 0;
-    margin-right: 11px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
 
     .meet-flight-select {
         width: 288px;
@@ -33,6 +37,7 @@
     .meet-lifter-select {
         width: 364px;
         margin-left: 8px;
+        margin-right: 220px;
     }
 }
 
@@ -43,6 +48,8 @@
 
     .meet-lift-tab {
         display: inline-block;
+        background: white;
+        color: black;
         border: 1px solid black;
         border-radius: 4px 4px 0px 0px;
         padding: 8px 10px 8px 10px;
@@ -52,12 +59,14 @@
         &:hover {
             cursor: pointer;
             background-color: $clouds-white;
+            color: black;
         }
     }
 
     .selected {
         background-color: $clouds-white;
         border-bottom-color: $clouds-white;
+        color: black;
     }
 
     #squat-tab {
@@ -75,20 +84,22 @@
 }
 
 .meet-left-panel {
-    width: 74%;
+    width: 66%;
     display: inline-block;
     float: left;
+    color: black;
+
     .meet-bar-display {
         @include panel-component(48%, 225px);
         float: left;
-        border: 1px solid black;
+        background: white;
     }
 
     .meet-current-lift {
-        @include panel-component(42%, 225px);
-        border-width: 1px 1px 1px 0px;
-        border-style: solid;
-        border-color: black;
+        @include panel-component(50%, 225px);
+        margin-left: -37px;
+        background: white;
+        text-align: left;
 
         .round-button-wrapper {
             width: 20%;
@@ -103,6 +114,7 @@
         .meet-lift-round {
             display: inline-block;
             font-size: 45px;
+            background: white;
             strong {
                 font-size: 51px;
             }
@@ -117,7 +129,8 @@
     .meet-lifter-info {
         @include panel-component(27%, 200px);
         float: left;
-        border: 1px solid black;
+        background: white;
+        text-align: left;
 
         .meet-name {
             font-size: 21px;
@@ -143,10 +156,9 @@
     }
 
     .meet-timer {
-        @include panel-component(41%, 200px);
-        border-width: 1px 1px 1px 0px;
-        border-style: solid;
-        border-color: black;
+        @include panel-component(47%, 200px);
+        margin-left: -4px;
+        background: white;
 
         .lift-timer-value {
             font-size: 90px;
@@ -167,10 +179,9 @@
     }
 
     .meet-lift-result {
-        @include panel-component(21%, 190px);
+        @include panel-component(21%, 187px);
         border: none;
         padding: 0px 5px 10px 5px;
-        margin-right: 32px;
         float: right;
 
         .meet-result-btn {
@@ -181,14 +192,16 @@
 }
 
 .meet-right-panel {
-    width: 25%;
+    // width: 25%;
     display: inline-block;
+    background: white;
+    color: black;
+    margin-left: -118px;
+    margin-top: -30px;
+
     .meet-result-summary {
-        @include panel-component(130%, 480px);
-        margin-left: -17px;
-        margin-top: -16px;
-        border: 1px solid black;
-        background-color: $clouds-white;
+        height: 490px;
+        padding: 10px 10px;
 
         .top-result-header {
             display: inline-block;
@@ -196,6 +209,7 @@
 
         .lifter-header {
             width: 180px;
+            text-align: left;
         }
 
         .attempt-header {
@@ -207,6 +221,7 @@
             display: inline-block;
             width: 180px;
             text-overflow: ellipsis;
+            text-align: left;
         }
 
         .lifter-attempt-result {
@@ -236,16 +251,11 @@
 }
 
 .meet-event-nav {
-    @include meet-nav-bar(778px);
-    padding: 0;
-    margin-right: 15px;
+    margin-top: 15px;
+    text-align: left;
 }
 
 .meet-nav {
     @include meet-nav-bar(25%);
-}
-
-.nav-btn-float-right {
-    float: right;
 }
 
