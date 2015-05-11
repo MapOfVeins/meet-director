@@ -3,9 +3,7 @@
     var APP = angular.module('MeetDirector.controllers'),
         PARTIALS_PATH = '/static/js/angular/partials/',
         MAX_ROUNDS = 3,
-        LBS_CONVERSION = 2.2046,
-        BAR_WEIGHT = 20,
-        COLLAR_WEIGHT = 5;
+        LBS_CONVERSION = 2.2046;
 
     APP.controller('RunMeetCtrl', [
         '$scope',
@@ -68,71 +66,24 @@
         $scope.setLiftDisplay = function () {
             var collar,
                 plate,
-                workingWeight = weightService.getWorkingWeight($scope.currentLift.liftInKg);
+                workingWeight = weightService.getWorkingWeight($scope.currentLift.liftInKg),
+                plates = weightService.availablePlates,
+                classes = weightService.availableClasses;
 
-            plate = $scope.calculatePlateNumber(25, workingWeight);
-            workingWeight = plate.remaining;
-            $scope.insertPlatesIntoLiftDisplay(plate, '_25kg-plate');
+            for (var i = 0; i < plates.length; i++) {
+                // Calculate the number of plates required for
+                // each plate type
+                plate = weightService.getNumPlates(plates[i], workingWeight);
 
-            plate = $scope.calculatePlateNumber(20, workingWeight);
-            workingWeight = plate.remaining;
-            $scope.insertPlatesIntoLiftDisplay(plate, '_20kg-plate');
+                // Subtract the weight used on the last biggest plate size
+                workingWeight = plate.remaining;
 
-            plate = $scope.calculatePlateNumber(15, workingWeight);
-            workingWeight = plate.remaining;
-            $scope.insertPlatesIntoLiftDisplay(plate, '_15kg-plate');
+                // Now display them, with the correct class for ng-class
+                weightService.updatePlateDisplay(plate, classes[i], $scope.currentLift);
+            }
 
-            plate = $scope.calculatePlateNumber(10, workingWeight);
-            workingWeight = plate.remaining;
-            $scope.insertPlatesIntoLiftDisplay(plate, '_10kg-plate');
-
-            plate = $scope.calculatePlateNumber(5, workingWeight);
-            workingWeight = plate.remaining;
-            $scope.insertPlatesIntoLiftDisplay(plate, '_5kg-plate');
-
-            plate = $scope.calculatePlateNumber(2.5, workingWeight);
-            workingWeight = plate.remaining;
-            $scope.insertPlatesIntoLiftDisplay(plate, '_2-5kg-plate');
-
-            plate = $scope.calculatePlateNumber(1, workingWeight);
-            workingWeight = plate.remaining;
-            $scope.insertPlatesIntoLiftDisplay(plate, '_1kg-plate');
-
-            plate = $scope.calculatePlateNumber(0.5, workingWeight);
-            workingWeight = plate.remaining;
-            $scope.insertPlatesIntoLiftDisplay(plate, '_0-5kg-plate');
-
-            collar = {
-                plateClass: 'collar',
-                weight: 5
-            };
-
-            $scope.currentLift.plates.push(collar);
-        };
-
-        $scope.insertPlatesIntoLiftDisplay = function (plates, plateClass) {
-            var plateToInsert;
-
-            for (var i = 0; i < plates.numPlates; i++) {
-                plateToInsert = {
-                    plateClass: plateClass,
-                    weight: plates.weight
-                };
-                $scope.currentLift.plates.push(plateToInsert);
-            };
-        };
-
-        $scope.calculatePlateNumber = function (plateWeight, remainingWeight) {
-            var num;
-
-            num = Math.floor(remainingWeight / plateWeight);
-            remainingWeight -= (plateWeight * num);
-
-            return {
-                numPlates: num,
-                remaining: remainingWeight,
-                weight: plateWeight
-            };
+            // We also need to include the collar!
+            $scope.currentLift.plates.push(weightService.collar);
         };
 
         $scope.recordLift = function (result) {
