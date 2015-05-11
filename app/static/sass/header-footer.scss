@@ -9,14 +9,13 @@
  */
 @mixin bookend($height:60px, $color: $midnight-blue) {
     background: $color;
-    // border-bottom: 1px solid $concrete-gray;
     height: $height;
     width: 100%;
 }
 
 .header {
     @include bookend(60px, transparent);
-    position: fixed;
+    height: 0;
     top: 0;
     left: 0;
     z-index: 100;

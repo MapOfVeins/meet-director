@@ -203,7 +203,7 @@ select {
   background: transparent;
   height: 60px;
   width: 100%;
-  position: fixed;
+  height: 0;
   top: 0;
   left: 0;
   z-index: 100; }
@@ -526,14 +526,13 @@ select {
 
 .meet-right-panel {
   display: inline-block;
-  background: white;
+  background: #ecf0f1;
   color: black;
   margin-left: -118px;
   margin-top: -30px; }
   .meet-right-panel .meet-result-summary {
     height: 490px;
-    padding: 10px 10px;
-    background-color: #ecf0f1; }
+    padding: 10px 10px; }
     .meet-right-panel .meet-result-summary .top-result-header {
       display: inline-block; }
     .meet-right-panel .meet-result-summary .lifter-header {
@@ -565,7 +564,6 @@ select {
       font-size: 14pt; }
 
 .meet-event-nav {
-  margin-right: 15px;
   margin-top: 15px;
   text-align: left; }
 
