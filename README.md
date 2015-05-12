@@ -1,29 +1,27 @@
-# README #
+# MEET DIRECTOR #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Meet Director is a single page web app for creating, hosting, and running a powerlifting meet. MD Runs on Flask, AngularJS, and Sass.
 
-### What is this repository for? ###
+### Features ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Automatic lifter and flight setup (you can still make your own schedule).
+* Lift result recording, live total calculations and rankings.
+* Full control of attempts, order, and lift recording.
+* Free, no excel required.
 
-### How do I get set up? ###
+### Requirements ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* [Flask](http://flask.pocoo.org/)
+* [Sass](http://sass-lang.com/install)
+* AngularJS minified script is included here
 
-### Contribution guidelines ###
+### Installation ###
+* Install Flask and Sass from the links above.
+* From the meet-director directory, compile sass using the following:
+      `$ sass app/static/sass/base.scss app/static/css/base.css`
+* From the meet-director directory, type `$ ./run.py`
+* In a browser, navigate to `localhost:5000`
 
-* Writing tests
-* Code review
-* Other guidelines
+### Support ###
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Currently tested on Ubuntu 14.04, using Chrome.
