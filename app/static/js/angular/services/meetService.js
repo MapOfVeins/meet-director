@@ -68,40 +68,6 @@
         },
         _flights = [{
             name: '',
-            // lifters: [{
-            //     name: 'test lifter',
-            //     age: 28,
-            //     gender: 'male',
-            //     weightClass: '120kg',
-            //     weightNum: 121,
-            //     attempts: {
-            //         squat: [160],
-            //         bench: [75],
-            //         deadlift: [120]
-            //     },
-            //     results: {
-            //         squat: [null, null, null],
-            //         bench: [null, null, null],
-            //         deadlift: [null, null, null]
-            //     }
-            // },
-            // {
-            //     name: 'test lifter2',
-            //     age: 28,
-            //     gender: 'male',
-            //     weightClass: '90kg',
-            //     weightNum: 90,
-            //     attempts: {
-            //         squat: [120],
-            //         bench: [50],
-            //         deadlift: [175]
-            //     },
-            //     results: {
-            //         squat: [null, null, null],
-            //         bench: [null, null, null],
-            //         deadlift: [null, null, null]
-            //     }
-            // }]
             lifters: []
         }];
 
