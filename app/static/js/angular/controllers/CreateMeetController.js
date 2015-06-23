@@ -158,8 +158,12 @@
             if ($scope.lifters.all.length > 0) {
                 $scope.flights.male = $scope.createFlights($scope.lifters.male);
                 $scope.flights.female = $scope.createFlights($scope.lifters.female);
+                $scope.flights.all = $scope.flights.male.concat($scope.flights.female);
 
-                console.log($scope.flights);
+                for (var i = 0; i < $scope.flights.all.length; i++) {
+                    $scope.flights[i].name = "Flight " + (i + 1);
+                    $scope.flights[i].lifters = $scope.flights.all[i];
+                }
 
                 $scope.setCurrentStage(PARTIALS_PATH + 'meet.html');
             } else {
