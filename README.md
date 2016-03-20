@@ -2,6 +2,8 @@
 
 Meet Director is a single page web app for creating, hosting, and running a powerlifting meet. MD Runs on Flask, AngularJS, and Sass.
 
+Note: Not being actively developed anymore, MD is operational but not necessarily complete -_-
+
 ### Features ###
 
 * Automatic lifter and flight setup (you can still make your own schedule).
